@@ -12,9 +12,11 @@
 class CountryPanel {
 
 // constructor method to initialize StackedAreaChart object
-constructor(parentElement, countryData) {
+constructor(parentElement, internalData) {
     this.parentElement = parentElement;
-    this.countryData = countryData;
+    this.internalData = internalData; // Internal data (year -> country -> {jewelry, bar_and_coin})
+    this.selectedCountry = null;
+    this.currentYear = "2024";
     this.displayData = [];
 }
 
@@ -25,27 +27,34 @@ constructor(parentElement, countryData) {
 	initVis(){
 		let vis = this;
 
-		vis.margin = {top: 40, right: 40, bottom: 60, left: 40};
+		vis.margin = {top: 40, right: 40, bottom: 60, left: 60};
 
-		vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
-		vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
+		const container = document.getElementById(vis.parentElement);
+		console.log('Panel container:', container);
+		console.log('Container dimensions:', container.getBoundingClientRect());
+		
+		vis.width = container.getBoundingClientRect().width - vis.margin.left - vis.margin.right;
+		vis.height = container.getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
+		
+		console.log('Panel dimensions:', vis.width, vis.height);
 
 		// SVG drawing area
 		vis.svg = d3.select("#" + vis.parentElement).append("svg")
 			.attr("width", vis.width + vis.margin.left + vis.margin.right)
 			.attr("height", vis.height + vis.margin.top + vis.margin.bottom)
+			.style("border", "1px solid #ddd");
 			
         vis.g = vis.svg.append("g")
-			.attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")")
-            .attr("width", 100)
-            .attr("height", 100)
-            .style("background", "black");
+			.attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
-        
-
-		// TO-DO: (Filter, aggregate, modify data)
-		vis.wrangleData();
-
+        // Placeholder text when no country is selected
+        vis.placeholderText = vis.g.append("text")
+            .attr("x", vis.width / 2)
+            .attr("y", vis.height / 2)
+            .attr("text-anchor", "middle")
+            .style("font-size", "16px")
+            .style("fill", "#999")
+            .text("Select a country to view details");
 	}
 
 	/*
@@ -107,57 +116,112 @@ constructor(parentElement, countryData) {
 	}
 
 	/*
-	 * Draw the color legend
+	 * Update the visualization for a selected country
 	 */
-	drawLegend() {
+	updateCountry(countryName, year) {
 		let vis = this;
-
-		const legendSvg = d3.select("#legend");
-		const legendWidth = 30;
-		const legendHeight = parseInt(legendSvg.style("height"));
-		const axisWidth = 35;
-
-		// Create gradient
-		const defs = legendSvg.append("defs");
-		const linearGradient = defs.append("linearGradient")
-			.attr("id", "legend-gradient")
-			.attr("x1", "0%")
-			.attr("y1", "100%")
-			.attr("x2", "0%")
-			.attr("y2", "0%");
-
-		// Create color stops for gradient using dynamic values
-		const numStops = 10;
-		for (let i = 0; i <= numStops; i++) {
-			const value = vis.minValue + (i / numStops) * (vis.maxValue - vis.minValue);
-			linearGradient.append("stop")
-				.attr("offset", `${(i / numStops) * 100}%`)
-				.attr("stop-color", vis.colorScale(value));
+		
+		console.log('updateCountry called with:', countryName, year);
+		console.log('Internal data:', vis.internalData);
+		
+		vis.selectedCountry = countryName;
+		vis.currentYear = year;
+		
+		// Hide placeholder text
+		if (vis.placeholderText) {
+			vis.placeholderText.remove();
+			vis.placeholderText = null;
 		}
-
-		// Draw legend rectangle
-		legendSvg.append("rect")
-			.attr("x", axisWidth)
-			.attr("y", 0)
-			.attr("width", legendWidth)
-			.attr("height", legendHeight)
-			.style("fill", "url(#legend-gradient)")
-			.style("stroke", "#333")
-			.style("stroke-width", 1);
-
-		// Add scale for axis with dynamic domain
-		const legendScale = d3.scaleLinear()
-			.domain([vis.minValue, vis.maxValue])
-			.range([legendHeight, 0]);
-
-		const legendAxis = d3.axisLeft(legendScale)
-			.ticks(6)
-			.tickFormat(d3.format(".2f"));
-
-		// Add axis on the left side
-		legendSvg.append("g")
-			.attr("transform", `translate(${axisWidth}, 0)`)
-			.call(legendAxis)
-			.style("font-size", "10px");
+		
+		// Get data for this country for the selected year
+		const yearData = vis.internalData[year];
+		console.log('Year data:', yearData);
+		
+		// Check if data exists for this country
+		if (!yearData || !yearData[countryName]) {
+			console.log(`No data available for ${countryName} in ${year}`);
+			// Show "No data" message
+			vis.g.selectAll(".viz-content").remove();
+			vis.g.append("text")
+				.attr("class", "viz-content")
+				.attr("x", vis.width / 2)
+				.attr("y", vis.height / 2)
+				.attr("text-anchor", "middle")
+				.style("font-size", "14px")
+				.style("fill", "#666")
+				.text(`No data available for ${countryName}`);
+			return;
+		}
+		
+		const countryData = yearData[countryName];
+		console.log(`Data for ${countryName}:`, countryData);
+		
+		// Clear previous visualization
+		vis.g.selectAll(".viz-content").remove();
+		
+		// Create a simple bar chart showing jewelry vs bar_and_coin
+		const data = [
+			{ category: "Jewelry", value: countryData.jewelry || 0 },
+			{ category: "Bar & Coin", value: countryData.bar_and_coin || 0 }
+		];
+		
+		// Scales
+		const xScale = d3.scaleBand()
+			.domain(data.map(d => d.category))
+			.range([0, vis.width])
+			.padding(0.3);
+		
+		const yScale = d3.scaleLinear()
+			.domain([0, d3.max(data, d => d.value)])
+			.range([vis.height, 0])
+			.nice();
+		
+		// Draw bars
+		vis.g.selectAll(".bar")
+			.data(data)
+			.enter()
+			.append("rect")
+			.attr("class", "bar viz-content")
+			.attr("x", d => xScale(d.category))
+			.attr("y", d => yScale(d.value))
+			.attr("width", xScale.bandwidth())
+			.attr("height", d => vis.height - yScale(d.value))
+			.attr("fill", "#ff8000");
+		
+		// Add value labels on bars
+		vis.g.selectAll(".label")
+			.data(data)
+			.enter()
+			.append("text")
+			.attr("class", "label viz-content")
+			.attr("x", d => xScale(d.category) + xScale.bandwidth() / 2)
+			.attr("y", d => yScale(d.value) - 5)
+			.attr("text-anchor", "middle")
+			.style("font-size", "12px")
+			.style("font-weight", "bold")
+			.text(d => d.value.toFixed(1));
+		
+		// Add axes
+		const xAxis = d3.axisBottom(xScale);
+		const yAxis = d3.axisLeft(yScale);
+		
+		vis.g.append("g")
+			.attr("class", "x-axis viz-content")
+			.attr("transform", `translate(0, ${vis.height})`)
+			.call(xAxis);
+		
+		vis.g.append("g")
+			.attr("class", "y-axis viz-content")
+			.call(yAxis);
+		
+		// Add y-axis label
+		vis.g.append("text")
+			.attr("class", "viz-content")
+			.attr("transform", "rotate(-90)")
+			.attr("x", -vis.height / 2)
+			.attr("y", -45)
+			.attr("text-anchor", "middle")
+			.style("font-size", "12px")
+			.text("Tonnes");
 	}
 }

@@ -7,23 +7,41 @@ let worldMap, countryPanel, timeline;
 loadData();
 
 function loadData() {
-    d3.json("data/new.json"). then(jsonData=>{
-            
-    //     // prepare data
-    //     let data = prepareDataForStudents(jsonData)
-        
-    //     console.log('data loaded ')
+    d3.json("data/consumer_internal_external.json").then(jsonData => {
+        console.log('data loaded', jsonData);
 
-    //     // TO-DO (Activity I): instantiate visualization objects
-		areachart = new WorldMap("world-map", jsonData)
-		countryPanel = new CountryPanel("panel-content", jsonData)
-		timeline = new Timeline("timeline")
+        // Store external and internal data
+        const externalData = jsonData.external;
+        const internalData = jsonData.internal;
 
-    //     // TO-DO (Activity I):  init visualizations
-		areachart.initVis()
-		countryPanel.initVis()
-		timeline.initVis()
+        // Instantiate visualization objects
+        worldMap = new WorldMap("world-map", externalData);
+        countryPanel = new CountryPanel("panel-content", internalData);
+        timeline = new Timeline("timeline");
+
+        // Initialize visualizations with default year 2024
+        worldMap.initVis();
+        countryPanel.initVis();
+        timeline.initVis();
     });
+}
+
+// Handle year updates across all visualizations
+function yearUpdate(year) {
+    console.log('Year updated to:', year);
+    
+    // Update year label
+    d3.select('#year-label').text("Year: " + year);
+    
+    // Update world map
+    if (worldMap) {
+        worldMap.updateYear(year);
+    }
+    
+    // Update country panel if a country is selected
+    if (countryPanel && countryPanel.selectedCountry) {
+        countryPanel.updateCountry(countryPanel.selectedCountry, year);
+    }
 }
 
 

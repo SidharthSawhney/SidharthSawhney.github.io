@@ -31,11 +31,14 @@ class Timeline {
             .min(2010)
             .max(2024)
             .step(1)
+			.default(2024)
             .width(vis.width)
             .tickFormat(d3.format('d'))
             .displayValue(true)
+            .default(2024)
             .on('onchange', (val) => {
-                d3.select('#year-label').text("Year: " + val);
+                // Call centralized year update function
+                yearUpdate(val);
             });
 
         // SVG drawing area

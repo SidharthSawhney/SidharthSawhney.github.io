@@ -12,9 +12,11 @@
 class WorldMap {
 
 // constructor method to initialize StackedAreaChart object
-constructor(parentElement, countryData) {
+constructor(parentElement, allYearData) {
     this.parentElement = parentElement;
-    this.countryData = countryData;
+    this.allYearData = allYearData; // Data for all years
+    this.currentYear = "2024"; // Default year
+    this.countryData = allYearData[this.currentYear]; // Current year's data
     this.displayData = [];
 }
 
@@ -71,34 +73,46 @@ constructor(parentElement, countryData) {
 
         vis.path = d3.geoPath().projection(vis.projection);
 		
-		// Calculate min and max values from data
-		const values = Object.values(vis.countryData);
-		vis.minValue = d3.min(values);
-		vis.maxValue = d3.max(values);
+ 		// Calculate min and max values from ALL years for consistent color scale
+ 		let allValues = [];
+ 		Object.keys(vis.allYearData).forEach(year => {
+ 			allValues = allValues.concat(Object.values(vis.allYearData[year]));
+ 		});
+ 		
+ 		// Filter out negative and zero values for log scale
+ 		const positiveValues = allValues.filter(v => v > 0);
+ 		vis.minValue = d3.min(positiveValues);
+ 		vis.maxValue = d3.max(positiveValues);
 		
-		// Create custom color scale: light yellow to bright orange
-		vis.colorScale = d3.scaleLinear()
+		// Create custom color scale with log scaling for better distribution
+		// Log scale works better for skewed data where some countries consume much more
+		vis.colorScale = d3.scaleLog()
 			.domain([vis.minValue, vis.maxValue])
-			.range(["#ffffcc", "#e67300"]);
+			.range(["#ffffcc", "#e67300"])
+			.clamp(true); // Clamp values outside domain
 		
 		// Draw legend with dynamic scale
 		vis.drawLegend();
 		
-		// Load world map
-		d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then(worldData => {
-			vis.g.selectAll("path")
-				.data(worldData.features)
-				.enter()
-				.append("path")
-				.attr("d", vis.path)
-				.attr("fill", d => {
-					const countryName = d.properties.name;
-					const value = vis.countryData[countryName];
-					return value !== undefined ? vis.colorScale(value) : "#cccccc";
-				})
-				.attr("stroke", "#333333")
-				.attr("stroke-width", 0.5)
-				.style("opacity", 0.9)
+ 		// Load world map
+ 		d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then(worldData => {
+ 			vis.countryPaths = vis.g.selectAll("path")
+ 				.data(worldData.features)
+ 				.enter()
+ 				.append("path")
+ 				.attr("d", vis.path)
+ 				.attr("fill", d => {
+ 					const countryName = d.properties.name;
+ 					const value = vis.countryData[countryName];
+ 					// Handle undefined, zero, and negative values
+ 					if (value === undefined || value <= 0) {
+ 						return "#cccccc";
+ 					}
+ 					return vis.colorScale(value);
+ 				})
+ 				.attr("stroke", "#333333")
+ 				.attr("stroke-width", 0.5)
+ 				.style("opacity", 0.9)
 				.on("mouseover", function (event, d) {
 					vis.tooltip.style("display", "block").text(d.properties.name);
 				})
@@ -109,9 +123,16 @@ constructor(parentElement, countryData) {
 					vis.tooltip.style("display", "none");
 				})
 				.on("click", function(_, d) {
+					const countryName = d.properties.name;
+					
 					// Slide in the panel and set country name
 					d3.select("#country-panel").style("right", "0");
-					d3.select("#country-name").text(d.properties.name);
+					d3.select("#country-name").text(countryName);
+					
+					// Update country panel visualization with the selected country
+					if (window.countryPanel) {
+						window.countryPanel.updateCountry(countryName, vis.currentYear);
+					}
 					
 					const bounds = vis.path.bounds(d);
 					const dx = bounds[1][0] - bounds[0][0];
@@ -211,10 +232,16 @@ constructor(parentElement, countryData) {
 			.attr("x2", "100%")
 			.attr("y2", "0%");
 
-		// Create color stops for gradient using dynamic values
-		const numStops = 10;
+		// Create color stops for gradient using LOGARITHMIC spacing
+		const numStops = 20;
+		const logMin = Math.log(vis.minValue);
+		const logMax = Math.log(vis.maxValue);
+		
 		for (let i = 0; i <= numStops; i++) {
-			const value = vis.minValue + (i / numStops) * (vis.maxValue - vis.minValue);
+			// Calculate logarithmically-spaced values
+			const logValue = logMin + (i / numStops) * (logMax - logMin);
+			const value = Math.exp(logValue);
+			
 			linearGradient.append("stop")
 				.attr("offset", `${(i / numStops) * 100}%`)
 				.attr("stop-color", vis.colorScale(value));
@@ -230,19 +257,45 @@ constructor(parentElement, countryData) {
 			.style("stroke", "#333")
 			.style("stroke-width", 1);
 
-		// Add scale for axis with dynamic domain
-		const legendScale = d3.scaleLinear()
+		// Add scale for axis with dynamic domain (log scale to match color scale)
+		const legendScale = d3.scaleLog()
 			.domain([vis.minValue, vis.maxValue])
 			.range([0, legendWidth]);
 
 		const legendAxis = d3.axisBottom(legendScale)
-			.ticks(5)
-			.tickFormat(d3.format(".2f"));
+			.tickValues([10, 100, 1000])
+			.tickFormat(d3.format(".0f")); // Use integer format for better readability
 
 		// Add axis below the color bar
 		legendSvg.append("g")
 			.attr("transform", `translate(0, ${legendHeight})`)
 			.call(legendAxis)
 			.style("font-size", "10px");
+	}
+
+	/*
+	 * Update the map for a new year
+	 */
+	updateYear(year) {
+		let vis = this;
+		
+		vis.currentYear = year.toString();
+		vis.countryData = vis.allYearData[vis.currentYear];
+		
+		// Update country colors
+		if (vis.countryPaths) {
+			vis.countryPaths
+				.transition()
+				.duration(500)
+				.attr("fill", d => {
+					const countryName = d.properties.name;
+					const value = vis.countryData[countryName];
+					// Handle undefined, zero, and negative values
+					if (value === undefined || value <= 0) {
+						return "#cccccc";
+					}
+					return vis.colorScale(value);
+				});
+		}
 	}
 }
