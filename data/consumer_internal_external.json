@@ -1,0 +1,2311 @@
+{
+  "external": {
+    "2010": {
+      "India": 1001.8,
+      "Pakistan": 33.8,
+      "Sri Lanka": 0.0,
+      "China": 675.8,
+      "Japan": -19.1,
+      "Indonesia": 50.6,
+      "Malaysia": 16.7,
+      "Singapore": 9.9,
+      "South Korea": 19.2,
+      "Thailand": 71.3,
+      "Vietnam": 82.3,
+      "Australia": 0.0,
+      "Saudi Arabia": 84.5,
+      "United Arab Emirates": 76.9,
+      "Kuwait": 10.3,
+      "Egypt": 55.3,
+      "Iran": 85.0,
+      "Turkey": 108.8,
+      "Russia": 66.5,
+      "United States": 226.7,
+      "Canada": 20.4,
+      "Mexico": 27.5,
+      "Brazil": 29.2,
+      "France": 22.0,
+      "Germany": 136.5,
+      "Italy": 34.2,
+      "Spain": 11.6,
+      "England": 40.8,
+      "Switzerland": 86.9,
+      "Austria": 13.7
+    },
+    "2011": {
+      "India": 974.0,
+      "Pakistan": 40.0,
+      "Sri Lanka": 0.0,
+      "China": 873.0,
+      "Japan": -36.4,
+      "Indonesia": 60.8,
+      "Malaysia": 19.8,
+      "Singapore": 13.1,
+      "South Korea": 26.6,
+      "Thailand": 113.6,
+      "Vietnam": 103.4,
+      "Australia": 0.0,
+      "Saudi Arabia": 72.5,
+      "United Arab Emirates": 68.2,
+      "Kuwait": 9.7,
+      "Egypt": 36.4,
+      "Iran": 98.2,
+      "Turkey": 145.5,
+      "Russia": 68.3,
+      "United States": 198.5,
+      "Canada": 20.6,
+      "Mexico": 21.9,
+      "Brazil": 25.9,
+      "France": 25.7,
+      "Germany": 154.3,
+      "Italy": 26.9,
+      "Spain": 8.2,
+      "England": 38.8,
+      "Switzerland": 96.8,
+      "Austria": 15.1
+    },
+    "2012": {
+      "India": 914.2,
+      "Pakistan": 39.4,
+      "Sri Lanka": 0.0,
+      "China": 918.3,
+      "Japan": 5.1,
+      "Indonesia": 61.7,
+      "Malaysia": 19.6,
+      "Singapore": 14.8,
+      "South Korea": 28.0,
+      "Thailand": 110.0,
+      "Vietnam": 84.3,
+      "Australia": 0.0,
+      "Saudi Arabia": 65.9,
+      "United Arab Emirates": 60.0,
+      "Kuwait": 9.3,
+      "Egypt": 44.2,
+      "Iran": 102.1,
+      "Turkey": 114.0,
+      "Russia": 70.6,
+      "United States": 160.2,
+      "Canada": 17.6,
+      "Mexico": 18.4,
+      "Brazil": 28.1,
+      "France": 18.4,
+      "Germany": 118.9,
+      "Italy": 22.6,
+      "Spain": 8.4,
+      "England": 35.0,
+      "Switzerland": 62.2,
+      "Austria": 10.4
+    },
+    "2013": {
+      "India": 956.7,
+      "Pakistan": 44.3,
+      "Sri Lanka": 0.0,
+      "Japan": 20.9,
+      "Indonesia": 88.1,
+      "Malaysia": 26.6,
+      "Singapore": 20.9,
+      "South Korea": 40.8,
+      "Thailand": 153.8,
+      "Vietnam": 99.7,
+      "Australia": 0.0,
+      "Saudi Arabia": 84.7,
+      "United Arab Emirates": 78.5,
+      "Kuwait": 15.5,
+      "Egypt": 52.9,
+      "Iran": 127.7,
+      "Turkey": 184.1,
+      "Russia": 89.6,
+      "United States": 187.8,
+      "Canada": 19.7,
+      "Mexico": 18.4,
+      "Brazil": 26.5,
+      "France": 16.8,
+      "Germany": 143.4,
+      "Italy": 21.1,
+      "Spain": 7.8,
+      "England": 32.7,
+      "Switzerland": 61.7,
+      "Austria": 13.0
+    },
+    "2014": {
+      "India": 832.5,
+      "Pakistan": 35.8,
+      "Sri Lanka": 9.1,
+      "Japan": 13.7,
+      "Indonesia": 63.4,
+      "Malaysia": 24.8,
+      "Singapore": 20.5,
+      "South Korea": 39.7,
+      "Thailand": 108.7,
+      "Vietnam": 66.7,
+      "Australia": 0.0,
+      "Saudi Arabia": 84.0,
+      "United Arab Emirates": 66.0,
+      "Kuwait": 17.8,
+      "Egypt": 50.4,
+      "Iran": 75.4,
+      "Turkey": 116.7,
+      "Russia": 75.5,
+      "United States": 164.8,
+      "Canada": 18.4,
+      "Mexico": 18.0,
+      "Brazil": 23.5,
+      "France": 15.1,
+      "Germany": 111.3,
+      "Italy": 19.9,
+      "Spain": 8.3,
+      "England": 33.3,
+      "Switzerland": 47.7,
+      "Austria": 10.2
+    },
+    "2015": {
+      "India": 857.2,
+      "Pakistan": 37.6,
+      "Sri Lanka": 10.7,
+      "Japan": 32.7,
+      "Indonesia": 59.0,
+      "Malaysia": 20.4,
+      "Singapore": 18.1,
+      "South Korea": 45.5,
+      "Thailand": 90.2,
+      "Vietnam": 63.4,
+      "Australia": 0.0,
+      "Saudi Arabia": 84.4,
+      "United Arab Emirates": 60.2,
+      "Kuwait": 16.2,
+      "Egypt": 43.2,
+      "Iran": 67.3,
+      "Turkey": 72.1,
+      "Russia": 48.0,
+      "United States": 190.6,
+      "Canada": 17.5,
+      "Mexico": 19.0,
+      "Brazil": 21.4,
+      "France": 13.1,
+      "Germany": 126.1,
+      "Italy": 19.2,
+      "Spain": 8.9,
+      "England": 34.4,
+      "Switzerland": 50.4,
+      "Austria": 12.2
+    },
+    "2016": {
+      "India": 666.1,
+      "Pakistan": 42.2,
+      "Sri Lanka": 10.5,
+      "China": 985.1,
+      "Japan": 34.0,
+      "Indonesia": 59.5,
+      "Malaysia": 17.8,
+      "Singapore": 17.1,
+      "South Korea": 39.2,
+      "Thailand": 81.5,
+      "Vietnam": 58.3,
+      "Australia": 0.0,
+      "Saudi Arabia": 70.3,
+      "United Arab Emirates": 51.2,
+      "Kuwait": 15.0,
+      "Egypt": 28.1,
+      "Iran": 45.1,
+      "Turkey": 70.1,
+      "Russia": 42.0,
+      "United States": 210.1,
+      "Canada": 17.9,
+      "Mexico": 18.2,
+      "Brazil": 20.2,
+      "France": 9.2,
+      "Germany": 121.1,
+      "Italy": 19.0,
+      "Spain": 8.4,
+      "England": 37.1,
+      "Switzerland": 45.6,
+      "Austria": 10.8
+    },
+    "2017": {
+      "India": 771.2,
+      "Pakistan": 44.9,
+      "Sri Lanka": 11.2,
+      "Japan": 13.3,
+      "Indonesia": 58.8,
+      "Malaysia": 17.6,
+      "Singapore": 16.6,
+      "South Korea": 41.2,
+      "Thailand": 75.4,
+      "Vietnam": 53.9,
+      "Australia": 0.0,
+      "Saudi Arabia": 71.1,
+      "United Arab Emirates": 52.2,
+      "Kuwait": 16.5,
+      "Egypt": 24.3,
+      "Iran": 64.5,
+      "Turkey": 93.6,
+      "Russia": 42.3,
+      "United States": 158.9,
+      "Canada": 17.0,
+      "Mexico": 19.3,
+      "Brazil": 20.2,
+      "France": 13.2,
+      "Germany": 117.0,
+      "Italy": 18.8,
+      "Spain": 8.6,
+      "England": 33.6,
+      "Switzerland": 42.5,
+      "Austria": 9.7
+    },
+    "2018": {
+      "India": 760.4,
+      "Pakistan": 40.2,
+      "Sri Lanka": 9.6,
+      "Japan": 29.0,
+      "Indonesia": 64.1,
+      "Malaysia": 18.9,
+      "Singapore": 16.4,
+      "South Korea": 41.0,
+      "Thailand": 80.6,
+      "Vietnam": 59.5,
+      "Australia": 0.0,
+      "Saudi Arabia": 69.0,
+      "United Arab Emirates": 41.9,
+      "Kuwait": 17.0,
+      "Egypt": 27.1,
+      "Iran": 91.2,
+      "Turkey": 74.1,
+      "Russia": 45.6,
+      "United States": 154.4,
+      "Canada": 16.5,
+      "Mexico": 18.9,
+      "Brazil": 20.1,
+      "France": 11.8,
+      "Germany": 106.9,
+      "Italy": 18.5,
+      "Spain": 8.9,
+      "England": 34.6,
+      "Switzerland": 36.6,
+      "Austria": 8.2
+    },
+    "2019": {
+      "India": 690.4,
+      "Pakistan": 38.0,
+      "Sri Lanka": 7.9,
+      "China": 899.5,
+      "Japan": -3.1,
+      "Indonesia": 54.6,
+      "Malaysia": 17.6,
+      "Singapore": 15.0,
+      "South Korea": 38.9,
+      "Thailand": 46.5,
+      "Vietnam": 56.4,
+      "Australia": 0.0,
+      "Saudi Arabia": 67.3,
+      "United Arab Emirates": 39.1,
+      "Kuwait": 15.9,
+      "Egypt": 28.8,
+      "Iran": 69.6,
+      "Turkey": 89.3,
+      "Russia": 48.1,
+      "United States": 150.8,
+      "Canada": 17.4,
+      "Mexico": 18.1,
+      "Brazil": 19.6,
+      "France": 13.0,
+      "Germany": 96.2,
+      "Italy": 18.2,
+      "Spain": 9.0,
+      "England": 32.2,
+      "Switzerland": 29.8,
+      "Austria": 6.2
+    },
+    "2020": {
+      "India": 446.4,
+      "Pakistan": 28.8,
+      "Sri Lanka": 4.3,
+      "China": 641.3,
+      "Japan": 4.5,
+      "Indonesia": 37.6,
+      "Malaysia": 13.5,
+      "Singapore": 9.4,
+      "South Korea": 35.4,
+      "Thailand": -81.5,
+      "Vietnam": 39.8,
+      "Australia": 0.0,
+      "Saudi Arabia": 48.0,
+      "United Arab Emirates": 26.7,
+      "Kuwait": 13.0,
+      "Egypt": 23.3,
+      "Iran": 56.3,
+      "Turkey": 147.0,
+      "Russia": 34.8,
+      "United States": 187.3,
+      "Canada": 20.8,
+      "Mexico": 13.3,
+      "Brazil": 16.0,
+      "France": 14.0,
+      "Germany": 166.0,
+      "Italy": 13.8,
+      "Spain": 7.0,
+      "England": 29.6,
+      "Switzerland": 42.9,
+      "Austria": 11.6
+    },
+    "2021": {
+      "India": 797.3,
+      "Pakistan": 41.2,
+      "Sri Lanka": 4.1,
+      "China": 993.7,
+      "Japan": 15.6,
+      "Indonesia": 46.8,
+      "Malaysia": 15.4,
+      "Singapore": 11.5,
+      "South Korea": 39.6,
+      "Thailand": 36.7,
+      "Vietnam": 43.0,
+      "Australia": 30.9,
+      "Saudi Arabia": 85.2,
+      "United Arab Emirates": 41.6,
+      "Kuwait": 16.6,
+      "Egypt": 33.8,
+      "Iran": 51.8,
+      "Turkey": 95.3,
+      "Russia": 46.8,
+      "United States": 264.9,
+      "Canada": 26.0,
+      "Mexico": 14.1,
+      "Brazil": 16.2,
+      "France": 17.1,
+      "Germany": 173.7,
+      "Italy": 17.3,
+      "Spain": 7.9,
+      "England": 34.8,
+      "Switzerland": 43.8,
+      "Austria": 12.3
+    },
+    "2022": {
+      "India": 774.1,
+      "Pakistan": 44.3,
+      "Sri Lanka": 3.9,
+      "China": 824.9,
+      "Japan": 4.3,
+      "Indonesia": 49.7,
+      "Malaysia": 19.2,
+      "Singapore": 14.9,
+      "South Korea": 32.4,
+      "Thailand": 38.4,
+      "Vietnam": 59.1,
+      "Australia": 36.2,
+      "Saudi Arabia": 80.6,
+      "United Arab Emirates": 55.3,
+      "Kuwait": 18.9,
+      "Egypt": 51.3,
+      "Iran": 71.7,
+      "Turkey": 121.7,
+      "Russia": 60.7,
+      "United States": 252.4,
+      "Canada": 27.5,
+      "Mexico": 14.2,
+      "Brazil": 17.0,
+      "France": 20.0,
+      "Germany": 196.5,
+      "Italy": 19.4,
+      "Spain": 8.2,
+      "England": 35.7,
+      "Switzerland": 48.7,
+      "Austria": 14.2
+    },
+    "2023": {
+      "India": 761.0,
+      "Pakistan": 43.0,
+      "Sri Lanka": 10.5,
+      "China": 959.2,
+      "Japan": 15.9,
+      "Indonesia": 45.7,
+      "Malaysia": 16.8,
+      "Singapore": 12.5,
+      "South Korea": 27.6,
+      "Thailand": 43.2,
+      "Vietnam": 55.5,
+      "Australia": 25.1,
+      "Saudi Arabia": 68.1,
+      "United Arab Emirates": 51.2,
+      "Kuwait": 19.6,
+      "Egypt": 57.0,
+      "Iran": 71.8,
+      "Turkey": 192.3,
+      "Russia": 71.2,
+      "United States": 252.5,
+      "Canada": 23.8,
+      "Mexico": 14.7,
+      "Brazil": 17.0,
+      "France": 16.9,
+      "Germany": 57.5,
+      "Italy": 18.8,
+      "Spain": 8.3,
+      "England": 31.0,
+      "Switzerland": 35.8,
+      "Austria": 4.1
+    },
+    "2024": {
+      "India": 802.8,
+      "Pakistan": 36.5,
+      "Sri Lanka": 5.8,
+      "China": 857.0,
+      "Japan": 17.7,
+      "Indonesia": 47.3,
+      "Malaysia": 19.0,
+      "Singapore": 13.3,
+      "South Korea": 31.0,
+      "Thailand": 48.9,
+      "Vietnam": 55.3,
+      "Australia": 20.2,
+      "Saudi Arabia": 64.6,
+      "United Arab Emirates": 48.3,
+      "Kuwait": 18.4,
+      "Egypt": 50.1,
+      "Iran": 69.0,
+      "Turkey": 153.1,
+      "Russia": 73.7,
+      "United States": 209.5,
+      "Canada": 21.3,
+      "Mexico": 14.3,
+      "Brazil": 17.3,
+      "France": 11.3,
+      "Germany": 26.3,
+      "Italy": 17.8,
+      "Spain": 8.6,
+      "England": 27.8,
+      "Switzerland": 16.9,
+      "Austria": 2.4
+    }
+  },
+  "internal": {
+    "2010": {
+      "Australia": {
+        "jewelry": 0.0,
+        "bar_and_coin": 0.0
+      },
+      "Austria": {
+        "jewelry": 0.0,
+        "bar_and_coin": 13.7
+      },
+      "Brazil": {
+        "jewelry": 28.8,
+        "bar_and_coin": 0.5
+      },
+      "Canada": {
+        "jewelry": 16.7,
+        "bar_and_coin": 3.7
+      },
+      "China": {
+        "jewelry": 492.7,
+        "bar_and_coin": 183.2
+      },
+      "Egypt": {
+        "jewelry": 53.0,
+        "bar_and_coin": 2.4
+      },
+      "England": {
+        "jewelry": 26.0,
+        "bar_and_coin": 14.8
+      },
+      "France": {
+        "jewelry": 20.7,
+        "bar_and_coin": 1.3
+      },
+      "Germany": {
+        "jewelry": 13.7,
+        "bar_and_coin": 122.8
+      },
+      "India": {
+        "jewelry": 661.7,
+        "bar_and_coin": 340.1
+      },
+      "Indonesia": {
+        "jewelry": 33.4,
+        "bar_and_coin": 17.2
+      },
+      "Iran": {
+        "jewelry": 41.5,
+        "bar_and_coin": 43.5
+      },
+      "Italy": {
+        "jewelry": 34.2,
+        "bar_and_coin": 0.0
+      },
+      "Japan": {
+        "jewelry": 20.8,
+        "bar_and_coin": -39.8
+      },
+      "Kuwait": {
+        "jewelry": 9.0,
+        "bar_and_coin": 1.4
+      },
+      "Malaysia": {
+        "jewelry": 11.3,
+        "bar_and_coin": 5.5
+      },
+      "Mexico": {
+        "jewelry": 22.8,
+        "bar_and_coin": 4.7
+      },
+      "Pakistan": {
+        "jewelry": 26.5,
+        "bar_and_coin": 7.4
+      },
+      "Russia": {
+        "jewelry": 60.3,
+        "bar_and_coin": 0.0
+      },
+      "Saudi Arabia": {
+        "jewelry": 69.9,
+        "bar_and_coin": 14.6
+      },
+      "Singapore": {
+        "jewelry": 8.5,
+        "bar_and_coin": 1.4
+      },
+      "South Korea": {
+        "jewelry": 17.8,
+        "bar_and_coin": 1.3
+      },
+      "Spain": {
+        "jewelry": 11.6,
+        "bar_and_coin": 0.0
+      },
+      "Sri Lanka": {
+        "jewelry": 0.0,
+        "bar_and_coin": 0.0
+      },
+      "Switzerland": {
+        "jewelry": 0.0,
+        "bar_and_coin": 86.9
+      },
+      "Thailand": {
+        "jewelry": 7.1,
+        "bar_and_coin": 64.2
+      },
+      "Turkey": {
+        "jewelry": 67.9,
+        "bar_and_coin": 40.9
+      },
+      "United Arab Emirates": {
+        "jewelry": 66.9,
+        "bar_and_coin": 10.0
+      },
+      "USA": {
+        "jewelry": 122.3,
+        "bar_and_coin": 104.4
+      },
+      "Vietnam": {
+        "jewelry": 14.2,
+        "bar_and_coin": 68.2
+      }
+    },
+    "2011": {
+      "Australia": {
+        "jewelry": 0.0,
+        "bar_and_coin": 0.0
+      },
+      "Austria": {
+        "jewelry": 0.0,
+        "bar_and_coin": 15.1
+      },
+      "Brazil": {
+        "jewelry": 25.0,
+        "bar_and_coin": 0.9
+      },
+      "Canada": {
+        "jewelry": 14.6,
+        "bar_and_coin": 6.0
+      },
+      "China": {
+        "jewelry": 606.6,
+        "bar_and_coin": 266.5
+      },
+      "Egypt": {
+        "jewelry": 34.1,
+        "bar_and_coin": 2.3
+      },
+      "England": {
+        "jewelry": 21.4,
+        "bar_and_coin": 17.4
+      },
+      "France": {
+        "jewelry": 19.2,
+        "bar_and_coin": 6.5
+      },
+      "Germany": {
+        "jewelry": 12.0,
+        "bar_and_coin": 142.3
+      },
+      "India": {
+        "jewelry": 619.3,
+        "bar_and_coin": 354.7
+      },
+      "Indonesia": {
+        "jewelry": 33.4,
+        "bar_and_coin": 27.4
+      },
+      "Iran": {
+        "jewelry": 45.0,
+        "bar_and_coin": 53.2
+      },
+      "Italy": {
+        "jewelry": 26.9,
+        "bar_and_coin": 0.0
+      },
+      "Japan": {
+        "jewelry": 15.9,
+        "bar_and_coin": -52.3
+      },
+      "Kuwait": {
+        "jewelry": 8.4,
+        "bar_and_coin": 1.3
+      },
+      "Malaysia": {
+        "jewelry": 10.0,
+        "bar_and_coin": 9.8
+      },
+      "Mexico": {
+        "jewelry": 18.9,
+        "bar_and_coin": 2.9
+      },
+      "Pakistan": {
+        "jewelry": 24.2,
+        "bar_and_coin": 15.7
+      },
+      "Russia": {
+        "jewelry": 64.4,
+        "bar_and_coin": 0.0
+      },
+      "Saudi Arabia": {
+        "jewelry": 54.7,
+        "bar_and_coin": 17.7
+      },
+      "Singapore": {
+        "jewelry": 8.9,
+        "bar_and_coin": 4.2
+      },
+      "South Korea": {
+        "jewelry": 18.6,
+        "bar_and_coin": 7.9
+      },
+      "Spain": {
+        "jewelry": 8.2,
+        "bar_and_coin": 0.0
+      },
+      "Sri Lanka": {
+        "jewelry": 0.0,
+        "bar_and_coin": 0.0
+      },
+      "Switzerland": {
+        "jewelry": 0.0,
+        "bar_and_coin": 96.8
+      },
+      "Thailand": {
+        "jewelry": 6.9,
+        "bar_and_coin": 106.6
+      },
+      "Turkey": {
+        "jewelry": 73.6,
+        "bar_and_coin": 72.0
+      },
+      "United Arab Emirates": {
+        "jewelry": 56.3,
+        "bar_and_coin": 11.9
+      },
+      "USA": {
+        "jewelry": 115.9,
+        "bar_and_coin": 82.6
+      },
+      "Vietnam": {
+        "jewelry": 12.8,
+        "bar_and_coin": 90.6
+      }
+    },
+    "2012": {
+      "Australia": {
+        "jewelry": 0.0,
+        "bar_and_coin": 0.0
+      },
+      "Austria": {
+        "jewelry": 0.0,
+        "bar_and_coin": 10.4
+      },
+      "Brazil": {
+        "jewelry": 27.1,
+        "bar_and_coin": 1.0
+      },
+      "Canada": {
+        "jewelry": 13.2,
+        "bar_and_coin": 4.4
+      },
+      "China": {
+        "jewelry": 654.2,
+        "bar_and_coin": 264.1
+      },
+      "Egypt": {
+        "jewelry": 42.1,
+        "bar_and_coin": 2.1
+      },
+      "England": {
+        "jewelry": 20.0,
+        "bar_and_coin": 15.0
+      },
+      "France": {
+        "jewelry": 15.7,
+        "bar_and_coin": 2.7
+      },
+      "Germany": {
+        "jewelry": 10.7,
+        "bar_and_coin": 108.1
+      },
+      "India": {
+        "jewelry": 595.2,
+        "bar_and_coin": 319.0
+      },
+      "Indonesia": {
+        "jewelry": 35.2,
+        "bar_and_coin": 26.5
+      },
+      "Iran": {
+        "jewelry": 45.2,
+        "bar_and_coin": 57.0
+      },
+      "Italy": {
+        "jewelry": 22.6,
+        "bar_and_coin": 0.0
+      },
+      "Japan": {
+        "jewelry": 16.1,
+        "bar_and_coin": -11.0
+      },
+      "Kuwait": {
+        "jewelry": 7.7,
+        "bar_and_coin": 1.6
+      },
+      "Malaysia": {
+        "jewelry": 11.9,
+        "bar_and_coin": 7.7
+      },
+      "Mexico": {
+        "jewelry": 15.3,
+        "bar_and_coin": 3.1
+      },
+      "Pakistan": {
+        "jewelry": 26.2,
+        "bar_and_coin": 13.2
+      },
+      "Russia": {
+        "jewelry": 67.7,
+        "bar_and_coin": 0.0
+      },
+      "Saudi Arabia": {
+        "jewelry": 49.0,
+        "bar_and_coin": 16.9
+      },
+      "Singapore": {
+        "jewelry": 9.7,
+        "bar_and_coin": 5.2
+      },
+      "South Korea": {
+        "jewelry": 16.6,
+        "bar_and_coin": 11.4
+      },
+      "Spain": {
+        "jewelry": 8.4,
+        "bar_and_coin": 0.0
+      },
+      "Sri Lanka": {
+        "jewelry": 0.0,
+        "bar_and_coin": 0.0
+      },
+      "Switzerland": {
+        "jewelry": 0.0,
+        "bar_and_coin": 62.2
+      },
+      "Thailand": {
+        "jewelry": 9.2,
+        "bar_and_coin": 100.9
+      },
+      "Turkey": {
+        "jewelry": 65.9,
+        "bar_and_coin": 48.1
+      },
+      "United Arab Emirates": {
+        "jewelry": 49.4,
+        "bar_and_coin": 10.7
+      },
+      "USA": {
+        "jewelry": 107.1,
+        "bar_and_coin": 53.1
+      },
+      "Vietnam": {
+        "jewelry": 10.5,
+        "bar_and_coin": 73.8
+      }
+    },
+    "2013": {
+      "Australia": {
+        "jewelry": 0.0,
+        "bar_and_coin": 0.0
+      },
+      "Austria": {
+        "jewelry": 0.0,
+        "bar_and_coin": 13.0
+      },
+      "Brazil": {
+        "jewelry": 25.1,
+        "bar_and_coin": 1.4
+      },
+      "Canada": {
+        "jewelry": 13.2,
+        "bar_and_coin": 6.5
+      },
+      "China": {
+        "jewelry": 0.0,
+        "bar_and_coin": 418.5
+      },
+      "Egypt": {
+        "jewelry": 45.8,
+        "bar_and_coin": 7.1
+      },
+      "England": {
+        "jewelry": 21.2,
+        "bar_and_coin": 11.5
+      },
+      "France": {
+        "jewelry": 14.9,
+        "bar_and_coin": 1.9
+      },
+      "Germany": {
+        "jewelry": 10.1,
+        "bar_and_coin": 133.3
+      },
+      "India": {
+        "jewelry": 615.5,
+        "bar_and_coin": 341.2
+      },
+      "Indonesia": {
+        "jewelry": 41.2,
+        "bar_and_coin": 46.9
+      },
+      "Iran": {
+        "jewelry": 63.7,
+        "bar_and_coin": 64.0
+      },
+      "Italy": {
+        "jewelry": 21.1,
+        "bar_and_coin": 0.0
+      },
+      "Japan": {
+        "jewelry": 17.0,
+        "bar_and_coin": 3.9
+      },
+      "Kuwait": {
+        "jewelry": 11.7,
+        "bar_and_coin": 3.8
+      },
+      "Malaysia": {
+        "jewelry": 16.3,
+        "bar_and_coin": 10.3
+      },
+      "Mexico": {
+        "jewelry": 15.9,
+        "bar_and_coin": 2.5
+      },
+      "Pakistan": {
+        "jewelry": 23.3,
+        "bar_and_coin": 20.9
+      },
+      "Russia": {
+        "jewelry": 79.7,
+        "bar_and_coin": 0.0
+      },
+      "Saudi Arabia": {
+        "jewelry": 66.4,
+        "bar_and_coin": 18.3
+      },
+      "Singapore": {
+        "jewelry": 14.4,
+        "bar_and_coin": 6.5
+      },
+      "South Korea": {
+        "jewelry": 22.9,
+        "bar_and_coin": 17.9
+      },
+      "Spain": {
+        "jewelry": 7.8,
+        "bar_and_coin": 0.0
+      },
+      "Sri Lanka": {
+        "jewelry": 0.0,
+        "bar_and_coin": 0.0
+      },
+      "Switzerland": {
+        "jewelry": 0.0,
+        "bar_and_coin": 61.7
+      },
+      "Thailand": {
+        "jewelry": 14.9,
+        "bar_and_coin": 138.9
+      },
+      "Turkey": {
+        "jewelry": 79.9,
+        "bar_and_coin": 104.2
+      },
+      "United Arab Emirates": {
+        "jewelry": 64.4,
+        "bar_and_coin": 14.1
+      },
+      "USA": {
+        "jewelry": 112.5,
+        "bar_and_coin": 75.3
+      },
+      "Vietnam": {
+        "jewelry": 11.8,
+        "bar_and_coin": 87.9
+      }
+    },
+    "2014": {
+      "Australia": {
+        "jewelry": 0.0,
+        "bar_and_coin": 0.0
+      },
+      "Austria": {
+        "jewelry": 0.0,
+        "bar_and_coin": 10.2
+      },
+      "Brazil": {
+        "jewelry": 22.2,
+        "bar_and_coin": 1.3
+      },
+      "Canada": {
+        "jewelry": 14.0,
+        "bar_and_coin": 4.4
+      },
+      "China": {
+        "jewelry": 875.3,
+        "bar_and_coin": 208.4
+      },
+      "Egypt": {
+        "jewelry": 44.4,
+        "bar_and_coin": 6.0
+      },
+      "England": {
+        "jewelry": 25.7,
+        "bar_and_coin": 7.6
+      },
+      "France": {
+        "jewelry": 14.2,
+        "bar_and_coin": 1.0
+      },
+      "Germany": {
+        "jewelry": 10.0,
+        "bar_and_coin": 101.3
+      },
+      "India": {
+        "jewelry": 626.6,
+        "bar_and_coin": 206.0
+      },
+      "Indonesia": {
+        "jewelry": 36.5,
+        "bar_and_coin": 26.9
+      },
+      "Iran": {
+        "jewelry": 39.3,
+        "bar_and_coin": 36.1
+      },
+      "Italy": {
+        "jewelry": 19.9,
+        "bar_and_coin": 0.0
+      },
+      "Japan": {
+        "jewelry": 16.5,
+        "bar_and_coin": -2.7
+      },
+      "Kuwait": {
+        "jewelry": 14.2,
+        "bar_and_coin": 3.6
+      },
+      "Malaysia": {
+        "jewelry": 16.5,
+        "bar_and_coin": 8.2
+      },
+      "Mexico": {
+        "jewelry": 15.8,
+        "bar_and_coin": 2.2
+      },
+      "Pakistan": {
+        "jewelry": 21.9,
+        "bar_and_coin": 13.9
+      },
+      "Russia": {
+        "jewelry": 67.6,
+        "bar_and_coin": 7.9
+      },
+      "Saudi Arabia": {
+        "jewelry": 68.4,
+        "bar_and_coin": 15.7
+      },
+      "Singapore": {
+        "jewelry": 14.0,
+        "bar_and_coin": 6.5
+      },
+      "South Korea": {
+        "jewelry": 22.9,
+        "bar_and_coin": 16.7
+      },
+      "Spain": {
+        "jewelry": 8.3,
+        "bar_and_coin": 0.0
+      },
+      "Sri Lanka": {
+        "jewelry": 9.1,
+        "bar_and_coin": 0.0
+      },
+      "Switzerland": {
+        "jewelry": 0.0,
+        "bar_and_coin": 47.7
+      },
+      "Thailand": {
+        "jewelry": 12.4,
+        "bar_and_coin": 96.4
+      },
+      "Turkey": {
+        "jewelry": 68.1,
+        "bar_and_coin": 48.6
+      },
+      "United Arab Emirates": {
+        "jewelry": 56.0,
+        "bar_and_coin": 9.9
+      },
+      "USA": {
+        "jewelry": 116.6,
+        "bar_and_coin": 48.2
+      },
+      "Vietnam": {
+        "jewelry": 12.5,
+        "bar_and_coin": 54.2
+      }
+    },
+    "2015": {
+      "Australia": {
+        "jewelry": 0.0,
+        "bar_and_coin": 0.0
+      },
+      "Austria": {
+        "jewelry": 0.0,
+        "bar_and_coin": 12.2
+      },
+      "Brazil": {
+        "jewelry": 20.0,
+        "bar_and_coin": 1.4
+      },
+      "Canada": {
+        "jewelry": 14.2,
+        "bar_and_coin": 3.4
+      },
+      "China": {
+        "jewelry": 825.9,
+        "bar_and_coin": 236.3
+      },
+      "Egypt": {
+        "jewelry": 38.3,
+        "bar_and_coin": 4.9
+      },
+      "England": {
+        "jewelry": 25.9,
+        "bar_and_coin": 8.5
+      },
+      "France": {
+        "jewelry": 13.6,
+        "bar_and_coin": -0.5
+      },
+      "Germany": {
+        "jewelry": 10.2,
+        "bar_and_coin": 116.0
+      },
+      "India": {
+        "jewelry": 662.3,
+        "bar_and_coin": 194.9
+      },
+      "Indonesia": {
+        "jewelry": 38.9,
+        "bar_and_coin": 20.1
+      },
+      "Iran": {
+        "jewelry": 37.2,
+        "bar_and_coin": 30.1
+      },
+      "Italy": {
+        "jewelry": 19.2,
+        "bar_and_coin": 0.0
+      },
+      "Japan": {
+        "jewelry": 16.5,
+        "bar_and_coin": 16.2
+      },
+      "Kuwait": {
+        "jewelry": 13.2,
+        "bar_and_coin": 3.0
+      },
+      "Malaysia": {
+        "jewelry": 13.6,
+        "bar_and_coin": 6.8
+      },
+      "Mexico": {
+        "jewelry": 16.6,
+        "bar_and_coin": 2.4
+      },
+      "Pakistan": {
+        "jewelry": 23.2,
+        "bar_and_coin": 14.5
+      },
+      "Russia": {
+        "jewelry": 43.2,
+        "bar_and_coin": 4.8
+      },
+      "Saudi Arabia": {
+        "jewelry": 69.5,
+        "bar_and_coin": 14.9
+      },
+      "Singapore": {
+        "jewelry": 12.2,
+        "bar_and_coin": 5.9
+      },
+      "South Korea": {
+        "jewelry": 25.6,
+        "bar_and_coin": 19.9
+      },
+      "Spain": {
+        "jewelry": 8.9,
+        "bar_and_coin": 0.0
+      },
+      "Sri Lanka": {
+        "jewelry": 10.7,
+        "bar_and_coin": 0.0
+      },
+      "Switzerland": {
+        "jewelry": 0.0,
+        "bar_and_coin": 50.4
+      },
+      "Thailand": {
+        "jewelry": 12.2,
+        "bar_and_coin": 78.0
+      },
+      "Turkey": {
+        "jewelry": 49.0,
+        "bar_and_coin": 23.1
+      },
+      "United Arab Emirates": {
+        "jewelry": 51.4,
+        "bar_and_coin": 8.8
+      },
+      "USA": {
+        "jewelry": 119.5,
+        "bar_and_coin": 71.1
+      },
+      "Vietnam": {
+        "jewelry": 15.6,
+        "bar_and_coin": 47.8
+      }
+    },
+    "2016": {
+      "Australia": {
+        "jewelry": 0.0,
+        "bar_and_coin": 0.0
+      },
+      "Austria": {
+        "jewelry": 0.0,
+        "bar_and_coin": 10.8
+      },
+      "Brazil": {
+        "jewelry": 18.9,
+        "bar_and_coin": 1.3
+      },
+      "Canada": {
+        "jewelry": 13.8,
+        "bar_and_coin": 4.1
+      },
+      "China": {
+        "jewelry": 692.9,
+        "bar_and_coin": 292.2
+      },
+      "Egypt": {
+        "jewelry": 25.4,
+        "bar_and_coin": 2.7
+      },
+      "England": {
+        "jewelry": 25.2,
+        "bar_and_coin": 11.9
+      },
+      "France": {
+        "jewelry": 13.4,
+        "bar_and_coin": -4.2
+      },
+      "Germany": {
+        "jewelry": 10.3,
+        "bar_and_coin": 110.8
+      },
+      "India": {
+        "jewelry": 504.5,
+        "bar_and_coin": 161.6
+      },
+      "Indonesia": {
+        "jewelry": 38.4,
+        "bar_and_coin": 21.1
+      },
+      "Iran": {
+        "jewelry": 40.5,
+        "bar_and_coin": 4.6
+      },
+      "Italy": {
+        "jewelry": 19.0,
+        "bar_and_coin": 0.0
+      },
+      "Japan": {
+        "jewelry": 16.9,
+        "bar_and_coin": 17.1
+      },
+      "Kuwait": {
+        "jewelry": 12.6,
+        "bar_and_coin": 2.5
+      },
+      "Malaysia": {
+        "jewelry": 12.6,
+        "bar_and_coin": 5.2
+      },
+      "Mexico": {
+        "jewelry": 16.0,
+        "bar_and_coin": 2.3
+      },
+      "Pakistan": {
+        "jewelry": 26.2,
+        "bar_and_coin": 16.0
+      },
+      "Russia": {
+        "jewelry": 38.3,
+        "bar_and_coin": 3.7
+      },
+      "Saudi Arabia": {
+        "jewelry": 53.8,
+        "bar_and_coin": 16.5
+      },
+      "Singapore": {
+        "jewelry": 12.1,
+        "bar_and_coin": 5.0
+      },
+      "South Korea": {
+        "jewelry": 24.1,
+        "bar_and_coin": 15.1
+      },
+      "Spain": {
+        "jewelry": 8.4,
+        "bar_and_coin": 0.0
+      },
+      "Sri Lanka": {
+        "jewelry": 10.5,
+        "bar_and_coin": 0.0
+      },
+      "Switzerland": {
+        "jewelry": 0.0,
+        "bar_and_coin": 45.6
+      },
+      "Thailand": {
+        "jewelry": 11.9,
+        "bar_and_coin": 69.7
+      },
+      "Turkey": {
+        "jewelry": 40.8,
+        "bar_and_coin": 29.4
+      },
+      "United Arab Emirates": {
+        "jewelry": 45.2,
+        "bar_and_coin": 6.0
+      },
+      "USA": {
+        "jewelry": 118.8,
+        "bar_and_coin": 91.3
+      },
+      "Vietnam": {
+        "jewelry": 15.4,
+        "bar_and_coin": 42.9
+      }
+    },
+    "2017": {
+      "Australia": {
+        "jewelry": 0.0,
+        "bar_and_coin": 0.0
+      },
+      "Austria": {
+        "jewelry": 0.0,
+        "bar_and_coin": 9.7
+      },
+      "Brazil": {
+        "jewelry": 19.2,
+        "bar_and_coin": 1.0
+      },
+      "Canada": {
+        "jewelry": 14.1,
+        "bar_and_coin": 2.9
+      },
+      "China": {
+        "jewelry": 715.7,
+        "bar_and_coin": 314.0
+      },
+      "Egypt": {
+        "jewelry": 21.8,
+        "bar_and_coin": 2.5
+      },
+      "England": {
+        "jewelry": 23.1,
+        "bar_and_coin": 10.5
+      },
+      "France": {
+        "jewelry": 13.3,
+        "bar_and_coin": -0.1
+      },
+      "Germany": {
+        "jewelry": 10.4,
+        "bar_and_coin": 106.6
+      },
+      "India": {
+        "jewelry": 601.9,
+        "bar_and_coin": 169.3
+      },
+      "Indonesia": {
+        "jewelry": 38.6,
+        "bar_and_coin": 20.2
+      },
+      "Iran": {
+        "jewelry": 45.4,
+        "bar_and_coin": 19.2
+      },
+      "Italy": {
+        "jewelry": 18.8,
+        "bar_and_coin": 0.0
+      },
+      "Japan": {
+        "jewelry": 16.6,
+        "bar_and_coin": -3.3
+      },
+      "Kuwait": {
+        "jewelry": 13.9,
+        "bar_and_coin": 2.6
+      },
+      "Malaysia": {
+        "jewelry": 11.8,
+        "bar_and_coin": 5.8
+      },
+      "Mexico": {
+        "jewelry": 16.6,
+        "bar_and_coin": 2.7
+      },
+      "Pakistan": {
+        "jewelry": 28.1,
+        "bar_and_coin": 16.9
+      },
+      "Russia": {
+        "jewelry": 39.8,
+        "bar_and_coin": 2.5
+      },
+      "Saudi Arabia": {
+        "jewelry": 54.4,
+        "bar_and_coin": 16.7
+      },
+      "Singapore": {
+        "jewelry": 11.8,
+        "bar_and_coin": 4.8
+      },
+      "South Korea": {
+        "jewelry": 22.7,
+        "bar_and_coin": 18.5
+      },
+      "Spain": {
+        "jewelry": 8.6,
+        "bar_and_coin": 0.0
+      },
+      "Sri Lanka": {
+        "jewelry": 11.2,
+        "bar_and_coin": 0.0
+      },
+      "Switzerland": {
+        "jewelry": 0.0,
+        "bar_and_coin": 42.5
+      },
+      "Thailand": {
+        "jewelry": 11.4,
+        "bar_and_coin": 64.0
+      },
+      "Turkey": {
+        "jewelry": 41.2,
+        "bar_and_coin": 52.4
+      },
+      "United Arab Emirates": {
+        "jewelry": 46.7,
+        "bar_and_coin": 5.5
+      },
+      "USA": {
+        "jewelry": 123.7,
+        "bar_and_coin": 35.2
+      },
+      "Vietnam": {
+        "jewelry": 16.5,
+        "bar_and_coin": 37.4
+      }
+    },
+    "2018": {
+      "Australia": {
+        "jewelry": 0.0,
+        "bar_and_coin": 0.0
+      },
+      "Austria": {
+        "jewelry": 0.0,
+        "bar_and_coin": 8.2
+      },
+      "Brazil": {
+        "jewelry": 19.2,
+        "bar_and_coin": 0.9
+      },
+      "Canada": {
+        "jewelry": 14.3,
+        "bar_and_coin": 2.2
+      },
+      "China": {
+        "jewelry": 743.0,
+        "bar_and_coin": 315.4
+      },
+      "Egypt": {
+        "jewelry": 24.5,
+        "bar_and_coin": 2.6
+      },
+      "England": {
+        "jewelry": 22.5,
+        "bar_and_coin": 12.1
+      },
+      "France": {
+        "jewelry": 13.0,
+        "bar_and_coin": -1.2
+      },
+      "Germany": {
+        "jewelry": 10.6,
+        "bar_and_coin": 96.3
+      },
+      "India": {
+        "jewelry": 598.0,
+        "bar_and_coin": 162.4
+      },
+      "Indonesia": {
+        "jewelry": 41.9,
+        "bar_and_coin": 22.2
+      },
+      "Iran": {
+        "jewelry": 29.4,
+        "bar_and_coin": 61.8
+      },
+      "Italy": {
+        "jewelry": 18.5,
+        "bar_and_coin": 0.0
+      },
+      "Japan": {
+        "jewelry": 16.5,
+        "bar_and_coin": 12.5
+      },
+      "Kuwait": {
+        "jewelry": 14.1,
+        "bar_and_coin": 3.0
+      },
+      "Malaysia": {
+        "jewelry": 12.9,
+        "bar_and_coin": 6.0
+      },
+      "Mexico": {
+        "jewelry": 16.8,
+        "bar_and_coin": 2.0
+      },
+      "Pakistan": {
+        "jewelry": 25.4,
+        "bar_and_coin": 14.8
+      },
+      "Russia": {
+        "jewelry": 43.0,
+        "bar_and_coin": 2.6
+      },
+      "Saudi Arabia": {
+        "jewelry": 52.8,
+        "bar_and_coin": 16.2
+      },
+      "Singapore": {
+        "jewelry": 11.5,
+        "bar_and_coin": 4.9
+      },
+      "South Korea": {
+        "jewelry": 21.7,
+        "bar_and_coin": 19.3
+      },
+      "Spain": {
+        "jewelry": 8.9,
+        "bar_and_coin": 0.0
+      },
+      "Sri Lanka": {
+        "jewelry": 9.6,
+        "bar_and_coin": 0.0
+      },
+      "Switzerland": {
+        "jewelry": 0.0,
+        "bar_and_coin": 36.6
+      },
+      "Thailand": {
+        "jewelry": 12.1,
+        "bar_and_coin": 68.5
+      },
+      "Turkey": {
+        "jewelry": 36.4,
+        "bar_and_coin": 37.8
+      },
+      "United Arab Emirates": {
+        "jewelry": 36.2,
+        "bar_and_coin": 5.8
+      },
+      "USA": {
+        "jewelry": 128.4,
+        "bar_and_coin": 26.1
+      },
+      "Vietnam": {
+        "jewelry": 18.2,
+        "bar_and_coin": 41.3
+      }
+    },
+    "2019": {
+      "Australia": {
+        "jewelry": 0.0,
+        "bar_and_coin": 0.0
+      },
+      "Austria": {
+        "jewelry": 0.0,
+        "bar_and_coin": 6.2
+      },
+      "Brazil": {
+        "jewelry": 18.8,
+        "bar_and_coin": 0.9
+      },
+      "Canada": {
+        "jewelry": 14.4,
+        "bar_and_coin": 3.0
+      },
+      "China": {
+        "jewelry": 681.8,
+        "bar_and_coin": 217.7
+      },
+      "Egypt": {
+        "jewelry": 26.4,
+        "bar_and_coin": 2.5
+      },
+      "England": {
+        "jewelry": 21.8,
+        "bar_and_coin": 10.5
+      },
+      "France": {
+        "jewelry": 12.7,
+        "bar_and_coin": 0.3
+      },
+      "Germany": {
+        "jewelry": 10.6,
+        "bar_and_coin": 85.6
+      },
+      "India": {
+        "jewelry": 544.6,
+        "bar_and_coin": 145.8
+      },
+      "Indonesia": {
+        "jewelry": 40.4,
+        "bar_and_coin": 14.2
+      },
+      "Iran": {
+        "jewelry": 30.5,
+        "bar_and_coin": 39.1
+      },
+      "Italy": {
+        "jewelry": 18.2,
+        "bar_and_coin": 0.0
+      },
+      "Japan": {
+        "jewelry": 17.0,
+        "bar_and_coin": -20.1
+      },
+      "Kuwait": {
+        "jewelry": 13.3,
+        "bar_and_coin": 2.6
+      },
+      "Malaysia": {
+        "jewelry": 12.2,
+        "bar_and_coin": 5.4
+      },
+      "Mexico": {
+        "jewelry": 16.6,
+        "bar_and_coin": 1.4
+      },
+      "Pakistan": {
+        "jewelry": 23.8,
+        "bar_and_coin": 14.3
+      },
+      "Russia": {
+        "jewelry": 44.5,
+        "bar_and_coin": 3.7
+      },
+      "Saudi Arabia": {
+        "jewelry": 51.5,
+        "bar_and_coin": 15.8
+      },
+      "Singapore": {
+        "jewelry": 10.5,
+        "bar_and_coin": 4.4
+      },
+      "South Korea": {
+        "jewelry": 19.5,
+        "bar_and_coin": 19.5
+      },
+      "Spain": {
+        "jewelry": 9.0,
+        "bar_and_coin": 0.0
+      },
+      "Sri Lanka": {
+        "jewelry": 7.9,
+        "bar_and_coin": 0.0
+      },
+      "Switzerland": {
+        "jewelry": 0.0,
+        "bar_and_coin": 29.8
+      },
+      "Thailand": {
+        "jewelry": 11.1,
+        "bar_and_coin": 35.4
+      },
+      "Turkey": {
+        "jewelry": 36.5,
+        "bar_and_coin": 52.9
+      },
+      "United Arab Emirates": {
+        "jewelry": 34.0,
+        "bar_and_coin": 5.1
+      },
+      "USA": {
+        "jewelry": 131.1,
+        "bar_and_coin": 19.7
+      },
+      "Vietnam": {
+        "jewelry": 17.3,
+        "bar_and_coin": 39.1
+      }
+    },
+    "2020": {
+      "Australia": {
+        "jewelry": 0.0,
+        "bar_and_coin": 0.0
+      },
+      "Austria": {
+        "jewelry": 0.0,
+        "bar_and_coin": 11.6
+      },
+      "Brazil": {
+        "jewelry": 14.6,
+        "bar_and_coin": 1.4
+      },
+      "Canada": {
+        "jewelry": 13.1,
+        "bar_and_coin": 7.7
+      },
+      "China": {
+        "jewelry": 433.3,
+        "bar_and_coin": 208.0
+      },
+      "Egypt": {
+        "jewelry": 21.1,
+        "bar_and_coin": 2.2
+      },
+      "England": {
+        "jewelry": 15.7,
+        "bar_and_coin": 13.9
+      },
+      "France": {
+        "jewelry": 10.5,
+        "bar_and_coin": 3.5
+      },
+      "Germany": {
+        "jewelry": 9.0,
+        "bar_and_coin": 157.0
+      },
+      "India": {
+        "jewelry": 315.9,
+        "bar_and_coin": 130.4
+      },
+      "Indonesia": {
+        "jewelry": 20.9,
+        "bar_and_coin": 16.8
+      },
+      "Iran": {
+        "jewelry": 20.0,
+        "bar_and_coin": 36.3
+      },
+      "Italy": {
+        "jewelry": 13.8,
+        "bar_and_coin": 0.0
+      },
+      "Japan": {
+        "jewelry": 13.8,
+        "bar_and_coin": -9.3
+      },
+      "Kuwait": {
+        "jewelry": 10.3,
+        "bar_and_coin": 2.7
+      },
+      "Malaysia": {
+        "jewelry": 9.2,
+        "bar_and_coin": 4.3
+      },
+      "Mexico": {
+        "jewelry": 12.4,
+        "bar_and_coin": 0.9
+      },
+      "Pakistan": {
+        "jewelry": 16.8,
+        "bar_and_coin": 11.9
+      },
+      "Russia": {
+        "jewelry": 29.8,
+        "bar_and_coin": 5.0
+      },
+      "Saudi Arabia": {
+        "jewelry": 29.7,
+        "bar_and_coin": 18.4
+      },
+      "Singapore": {
+        "jewelry": 5.7,
+        "bar_and_coin": 3.7
+      },
+      "South Korea": {
+        "jewelry": 16.4,
+        "bar_and_coin": 19.0
+      },
+      "Spain": {
+        "jewelry": 7.0,
+        "bar_and_coin": 0.0
+      },
+      "Sri Lanka": {
+        "jewelry": 4.3,
+        "bar_and_coin": 0.0
+      },
+      "Switzerland": {
+        "jewelry": 0.0,
+        "bar_and_coin": 42.9
+      },
+      "Thailand": {
+        "jewelry": 5.9,
+        "bar_and_coin": -87.3
+      },
+      "Turkey": {
+        "jewelry": 25.9,
+        "bar_and_coin": 121.1
+      },
+      "United Arab Emirates": {
+        "jewelry": 21.5,
+        "bar_and_coin": 5.2
+      },
+      "USA": {
+        "jewelry": 118.2,
+        "bar_and_coin": 69.1
+      },
+      "Vietnam": {
+        "jewelry": 10.7,
+        "bar_and_coin": 29.1
+      }
+    },
+    "2021": {
+      "Australia": {
+        "jewelry": 8.4,
+        "bar_and_coin": 22.4
+      },
+      "Austria": {
+        "jewelry": 0.0,
+        "bar_and_coin": 12.3
+      },
+      "Brazil": {
+        "jewelry": 14.6,
+        "bar_and_coin": 1.6
+      },
+      "Canada": {
+        "jewelry": 15.2,
+        "bar_and_coin": 10.8
+      },
+      "China": {
+        "jewelry": 699.3,
+        "bar_and_coin": 294.4
+      },
+      "Egypt": {
+        "jewelry": 31.4,
+        "bar_and_coin": 2.4
+      },
+      "England": {
+        "jewelry": 19.3,
+        "bar_and_coin": 15.5
+      },
+      "France": {
+        "jewelry": 12.4,
+        "bar_and_coin": 4.7
+      },
+      "Germany": {
+        "jewelry": 11.1,
+        "bar_and_coin": 162.6
+      },
+      "India": {
+        "jewelry": 610.9,
+        "bar_and_coin": 186.5
+      },
+      "Indonesia": {
+        "jewelry": 27.0,
+        "bar_and_coin": 19.8
+      },
+      "Iran": {
+        "jewelry": 26.3,
+        "bar_and_coin": 25.5
+      },
+      "Italy": {
+        "jewelry": 17.3,
+        "bar_and_coin": 0.0
+      },
+      "Japan": {
+        "jewelry": 15.5,
+        "bar_and_coin": 0.1
+      },
+      "Kuwait": {
+        "jewelry": 13.0,
+        "bar_and_coin": 3.6
+      },
+      "Malaysia": {
+        "jewelry": 10.5,
+        "bar_and_coin": 4.9
+      },
+      "Mexico": {
+        "jewelry": 12.7,
+        "bar_and_coin": 1.4
+      },
+      "Pakistan": {
+        "jewelry": 23.1,
+        "bar_and_coin": 18.1
+      },
+      "Russia": {
+        "jewelry": 41.5,
+        "bar_and_coin": 5.3
+      },
+      "Saudi Arabia": {
+        "jewelry": 59.5,
+        "bar_and_coin": 25.7
+      },
+      "Singapore": {
+        "jewelry": 7.0,
+        "bar_and_coin": 4.5
+      },
+      "South Korea": {
+        "jewelry": 18.7,
+        "bar_and_coin": 20.9
+      },
+      "Spain": {
+        "jewelry": 7.9,
+        "bar_and_coin": 0.0
+      },
+      "Sri Lanka": {
+        "jewelry": 4.1,
+        "bar_and_coin": 0.0
+      },
+      "Switzerland": {
+        "jewelry": 0.0,
+        "bar_and_coin": 43.8
+      },
+      "Thailand": {
+        "jewelry": 8.1,
+        "bar_and_coin": 28.7
+      },
+      "Turkey": {
+        "jewelry": 33.9,
+        "bar_and_coin": 61.4
+      },
+      "United Arab Emirates": {
+        "jewelry": 33.9,
+        "bar_and_coin": 7.8
+      },
+      "USA": {
+        "jewelry": 149.1,
+        "bar_and_coin": 115.8
+      },
+      "Vietnam": {
+        "jewelry": 11.9,
+        "bar_and_coin": 31.1
+      }
+    },
+    "2022": {
+      "Australia": {
+        "jewelry": 11.0,
+        "bar_and_coin": 25.3
+      },
+      "Austria": {
+        "jewelry": 0.0,
+        "bar_and_coin": 14.2
+      },
+      "Brazil": {
+        "jewelry": 15.5,
+        "bar_and_coin": 1.6
+      },
+      "Canada": {
+        "jewelry": 15.4,
+        "bar_and_coin": 12.1
+      },
+      "China": {
+        "jewelry": 598.2,
+        "bar_and_coin": 226.8
+      },
+      "Egypt": {
+        "jewelry": 32.1,
+        "bar_and_coin": 19.2
+      },
+      "England": {
+        "jewelry": 19.3,
+        "bar_and_coin": 16.4
+      },
+      "France": {
+        "jewelry": 14.2,
+        "bar_and_coin": 5.8
+      },
+      "Germany": {
+        "jewelry": 11.1,
+        "bar_and_coin": 185.4
+      },
+      "India": {
+        "jewelry": 600.6,
+        "bar_and_coin": 173.6
+      },
+      "Indonesia": {
+        "jewelry": 28.3,
+        "bar_and_coin": 21.5
+      },
+      "Iran": {
+        "jewelry": 29.9,
+        "bar_and_coin": 41.8
+      },
+      "Italy": {
+        "jewelry": 19.4,
+        "bar_and_coin": 0.0
+      },
+      "Japan": {
+        "jewelry": 15.4,
+        "bar_and_coin": -11.2
+      },
+      "Kuwait": {
+        "jewelry": 14.7,
+        "bar_and_coin": 4.2
+      },
+      "Malaysia": {
+        "jewelry": 13.0,
+        "bar_and_coin": 6.2
+      },
+      "Mexico": {
+        "jewelry": 13.2,
+        "bar_and_coin": 1.1
+      },
+      "Pakistan": {
+        "jewelry": 23.5,
+        "bar_and_coin": 20.8
+      },
+      "Russia": {
+        "jewelry": 35.7,
+        "bar_and_coin": 25.0
+      },
+      "Saudi Arabia": {
+        "jewelry": 56.3,
+        "bar_and_coin": 24.3
+      },
+      "Singapore": {
+        "jewelry": 9.1,
+        "bar_and_coin": 5.8
+      },
+      "South Korea": {
+        "jewelry": 15.4,
+        "bar_and_coin": 17.0
+      },
+      "Spain": {
+        "jewelry": 8.2,
+        "bar_and_coin": 0.0
+      },
+      "Sri Lanka": {
+        "jewelry": 3.9,
+        "bar_and_coin": 0.0
+      },
+      "Switzerland": {
+        "jewelry": 0.0,
+        "bar_and_coin": 48.7
+      },
+      "Thailand": {
+        "jewelry": 9.4,
+        "bar_and_coin": 29.0
+      },
+      "Turkey": {
+        "jewelry": 36.9,
+        "bar_and_coin": 84.9
+      },
+      "United Arab Emirates": {
+        "jewelry": 46.9,
+        "bar_and_coin": 8.4
+      },
+      "USA": {
+        "jewelry": 144.5,
+        "bar_and_coin": 107.9
+      },
+      "Vietnam": {
+        "jewelry": 18.1,
+        "bar_and_coin": 41.0
+      }
+    },
+    "2023": {
+      "Australia": {
+        "jewelry": 11.7,
+        "bar_and_coin": 13.4
+      },
+      "Austria": {
+        "jewelry": 0.0,
+        "bar_and_coin": 4.1
+      },
+      "Brazil": {
+        "jewelry": 15.2,
+        "bar_and_coin": 1.7
+      },
+      "Canada": {
+        "jewelry": 14.4,
+        "bar_and_coin": 9.4
+      },
+      "China": {
+        "jewelry": 672.0,
+        "bar_and_coin": 287.2
+      },
+      "Egypt": {
+        "jewelry": 26.7,
+        "bar_and_coin": 30.3
+      },
+      "England": {
+        "jewelry": 18.2,
+        "bar_and_coin": 12.8
+      },
+      "France": {
+        "jewelry": 14.2,
+        "bar_and_coin": 2.7
+      },
+      "Germany": {
+        "jewelry": 10.7,
+        "bar_and_coin": 46.9
+      },
+      "India": {
+        "jewelry": 575.8,
+        "bar_and_coin": 185.2
+      },
+      "Indonesia": {
+        "jewelry": 25.1,
+        "bar_and_coin": 20.6
+      },
+      "Iran": {
+        "jewelry": 27.3,
+        "bar_and_coin": 44.5
+      },
+      "Italy": {
+        "jewelry": 18.8,
+        "bar_and_coin": 0.0
+      },
+      "Japan": {
+        "jewelry": 16.3,
+        "bar_and_coin": -0.4
+      },
+      "Kuwait": {
+        "jewelry": 14.3,
+        "bar_and_coin": 5.3
+      },
+      "Malaysia": {
+        "jewelry": 11.3,
+        "bar_and_coin": 5.5
+      },
+      "Mexico": {
+        "jewelry": 13.6,
+        "bar_and_coin": 1.1
+      },
+      "Pakistan": {
+        "jewelry": 21.1,
+        "bar_and_coin": 21.9
+      },
+      "Russia": {
+        "jewelry": 39.7,
+        "bar_and_coin": 31.5
+      },
+      "Saudi Arabia": {
+        "jewelry": 48.9,
+        "bar_and_coin": 19.2
+      },
+      "Singapore": {
+        "jewelry": 7.2,
+        "bar_and_coin": 5.3
+      },
+      "South Korea": {
+        "jewelry": 12.2,
+        "bar_and_coin": 15.3
+      },
+      "Spain": {
+        "jewelry": 8.3,
+        "bar_and_coin": 0.0
+      },
+      "Sri Lanka": {
+        "jewelry": 10.5,
+        "bar_and_coin": 0.0
+      },
+      "Switzerland": {
+        "jewelry": 0.0,
+        "bar_and_coin": 35.8
+      },
+      "Thailand": {
+        "jewelry": 9.2,
+        "bar_and_coin": 34.0
+      },
+      "Turkey": {
+        "jewelry": 42.2,
+        "bar_and_coin": 150.1
+      },
+      "United Arab Emirates": {
+        "jewelry": 39.8,
+        "bar_and_coin": 11.5
+      },
+      "USA": {
+        "jewelry": 136.9,
+        "bar_and_coin": 115.7
+      },
+      "Vietnam": {
+        "jewelry": 15.1,
+        "bar_and_coin": 40.4
+      }
+    },
+    "2024": {
+      "Australia": {
+        "jewelry": 8.9,
+        "bar_and_coin": 11.3
+      },
+      "Austria": {
+        "jewelry": 0.0,
+        "bar_and_coin": 2.4
+      },
+      "Brazil": {
+        "jewelry": 15.6,
+        "bar_and_coin": 1.8
+      },
+      "Canada": {
+        "jewelry": 13.8,
+        "bar_and_coin": 7.4
+      },
+      "China": {
+        "jewelry": 511.3,
+        "bar_and_coin": 345.7
+      },
+      "Egypt": {
+        "jewelry": 26.1,
+        "bar_and_coin": 24.0
+      },
+      "England": {
+        "jewelry": 17.4,
+        "bar_and_coin": 10.3
+      },
+      "France": {
+        "jewelry": 13.8,
+        "bar_and_coin": -2.6
+      },
+      "Germany": {
+        "jewelry": 9.5,
+        "bar_and_coin": 16.8
+      },
+      "India": {
+        "jewelry": 563.4,
+        "bar_and_coin": 239.4
+      },
+      "Indonesia": {
+        "jewelry": 22.8,
+        "bar_and_coin": 24.5
+      },
+      "Iran": {
+        "jewelry": 26.7,
+        "bar_and_coin": 42.3
+      },
+      "Italy": {
+        "jewelry": 17.8,
+        "bar_and_coin": 0.0
+      },
+      "Japan": {
+        "jewelry": 15.1,
+        "bar_and_coin": 2.6
+      },
+      "Kuwait": {
+        "jewelry": 12.3,
+        "bar_and_coin": 6.1
+      },
+      "Malaysia": {
+        "jewelry": 11.5,
+        "bar_and_coin": 7.5
+      },
+      "Mexico": {
+        "jewelry": 13.5,
+        "bar_and_coin": 0.8
+      },
+      "Pakistan": {
+        "jewelry": 17.5,
+        "bar_and_coin": 19.0
+      },
+      "Russia": {
+        "jewelry": 39.4,
+        "bar_and_coin": 34.4
+      },
+      "Saudi Arabia": {
+        "jewelry": 49.1,
+        "bar_and_coin": 15.5
+      },
+      "Singapore": {
+        "jewelry": 6.8,
+        "bar_and_coin": 6.5
+      },
+      "South Korea": {
+        "jewelry": 11.7,
+        "bar_and_coin": 19.4
+      },
+      "Spain": {
+        "jewelry": 8.6,
+        "bar_and_coin": 0.0
+      },
+      "Sri Lanka": {
+        "jewelry": 5.8,
+        "bar_and_coin": 0.0
+      },
+      "Switzerland": {
+        "jewelry": 0.0,
+        "bar_and_coin": 16.9
+      },
+      "Thailand": {
+        "jewelry": 9.1,
+        "bar_and_coin": 39.8
+      },
+      "Turkey": {
+        "jewelry": 40.9,
+        "bar_and_coin": 112.2
+      },
+      "United Arab Emirates": {
+        "jewelry": 34.7,
+        "bar_and_coin": 13.5
+      },
+      "USA": {
+        "jewelry": 131.9,
+        "bar_and_coin": 77.6
+      },
+      "Vietnam": {
+        "jewelry": 13.2,
+        "bar_and_coin": 42.1
+      }
+    }
+  }
+}
