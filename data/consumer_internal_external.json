@@ -30,7 +30,8 @@
       "Spain": 11.6,
       "England": 40.8,
       "Switzerland": 86.9,
-      "Austria": 13.7
+      "Austria": 13.7,
+      "Taiwan": 5.9
     },
     "2011": {
       "India": 974.0,
@@ -62,7 +63,8 @@
       "Spain": 8.2,
       "England": 38.8,
       "Switzerland": 96.8,
-      "Austria": 15.1
+      "Austria": 15.1,
+      "Taiwan": 13.0
     },
     "2012": {
       "India": 914.2,
@@ -94,7 +96,8 @@
       "Spain": 8.4,
       "England": 35.0,
       "Switzerland": 62.2,
-      "Austria": 10.4
+      "Austria": 10.4,
+      "Taiwan": 12.4
     },
     "2013": {
       "India": 956.7,
@@ -126,7 +129,8 @@
       "England": 32.7,
       "Switzerland": 61.7,
       "Austria": 13.0,
-      "China": 1449.80
+      "China": 1449.8,
+      "Taiwan": 18.8
     },
     "2014": {
       "India": 832.5,
@@ -158,7 +162,8 @@
       "England": 33.3,
       "Switzerland": 47.7,
       "Austria": 10.2,
-      "China": 1083.70
+      "China": 1083.7,
+      "Taiwan": 17.0
     },
     "2015": {
       "India": 857.2,
@@ -190,7 +195,8 @@
       "England": 34.4,
       "Switzerland": 50.4,
       "Austria": 12.2,
-      "China": 1062.20
+      "China": 1062.2,
+      "Taiwan": 13.8
     },
     "2016": {
       "India": 666.1,
@@ -222,7 +228,8 @@
       "Spain": 8.4,
       "England": 37.1,
       "Switzerland": 45.6,
-      "Austria": 10.8
+      "Austria": 10.8,
+      "Taiwan": 12.8
     },
     "2017": {
       "India": 771.2,
@@ -254,7 +261,8 @@
       "England": 33.6,
       "Switzerland": 42.5,
       "Austria": 9.7,
-      "China": 1029.70
+      "China": 1029.7,
+      "Taiwan": 12.2
     },
     "2018": {
       "India": 760.4,
@@ -286,7 +294,8 @@
       "England": 34.6,
       "Switzerland": 36.6,
       "Austria": 8.2,
-      "China": 1058.40
+      "China": 1058.4,
+      "Taiwan": 11.9
     },
     "2019": {
       "India": 690.4,
@@ -318,7 +327,8 @@
       "Spain": 9.0,
       "England": 32.2,
       "Switzerland": 29.8,
-      "Austria": 6.2
+      "Austria": 6.2,
+      "Taiwan": 10.8
     },
     "2020": {
       "India": 446.4,
@@ -350,7 +360,8 @@
       "Spain": 7.0,
       "England": 29.6,
       "Switzerland": 42.9,
-      "Austria": 11.6
+      "Austria": 11.6,
+      "Taiwan": 10.8
     },
     "2021": {
       "India": 797.3,
@@ -382,7 +393,8 @@
       "Spain": 7.9,
       "England": 34.8,
       "Switzerland": 43.8,
-      "Austria": 12.3
+      "Austria": 12.3,
+      "Taiwan": 10.2
     },
     "2022": {
       "India": 774.1,
@@ -414,7 +426,8 @@
       "Spain": 8.2,
       "England": 35.7,
       "Switzerland": 48.7,
-      "Austria": 14.2
+      "Austria": 14.2,
+      "Taiwan": 11.4
     },
     "2023": {
       "India": 761.0,
@@ -446,7 +459,8 @@
       "Spain": 8.3,
       "England": 31.0,
       "Switzerland": 35.8,
-      "Austria": 4.1
+      "Austria": 4.1,
+      "Taiwan": 10.8
     },
     "2024": {
       "India": 802.8,
@@ -478,7 +492,8 @@
       "Spain": 8.6,
       "England": 27.8,
       "Switzerland": 16.9,
-      "Austria": 2.4
+      "Austria": 2.4,
+      "Taiwan": 12.3
     }
   },
   "internal": {
@@ -602,6 +617,10 @@
       "Vietnam": {
         "jewelry": 14.2,
         "bar_and_coin": 68.2
+      },
+      "Taiwan": {
+        "jewelry": 7.7,
+        "bar_and_coin": -1.8
       }
     },
     "2011": {
@@ -724,6 +743,10 @@
       "Vietnam": {
         "jewelry": 12.8,
         "bar_and_coin": 90.6
+      },
+      "Taiwan": {
+        "jewelry": 7.1,
+        "bar_and_coin": 5.9
       }
     },
     "2012": {
@@ -846,6 +869,10 @@
       "Vietnam": {
         "jewelry": 10.5,
         "bar_and_coin": 73.8
+      },
+      "Taiwan": {
+        "jewelry": 7.2,
+        "bar_and_coin": 5.2
       }
     },
     "2013": {
@@ -968,6 +995,10 @@
       "Vietnam": {
         "jewelry": 11.8,
         "bar_and_coin": 87.9
+      },
+      "Taiwan": {
+        "jewelry": 9.9,
+        "bar_and_coin": 8.9
       }
     },
     "2014": {
@@ -1090,6 +1121,10 @@
       "Vietnam": {
         "jewelry": 12.5,
         "bar_and_coin": 54.2
+      },
+      "Taiwan": {
+        "jewelry": 8.4,
+        "bar_and_coin": 8.6
       }
     },
     "2015": {
@@ -1212,6 +1247,10 @@
       "Vietnam": {
         "jewelry": 15.6,
         "bar_and_coin": 47.8
+      },
+      "Taiwan": {
+        "jewelry": 7.1,
+        "bar_and_coin": 6.7
       }
     },
     "2016": {
@@ -1334,6 +1373,10 @@
       "Vietnam": {
         "jewelry": 15.4,
         "bar_and_coin": 42.9
+      },
+      "Taiwan": {
+        "jewelry": 6.6,
+        "bar_and_coin": 6.2
       }
     },
     "2017": {
@@ -1456,6 +1499,10 @@
       "Vietnam": {
         "jewelry": 16.5,
         "bar_and_coin": 37.4
+      },
+      "Taiwan": {
+        "jewelry": 6.3,
+        "bar_and_coin": 5.9
       }
     },
     "2018": {
@@ -1578,6 +1625,10 @@
       "Vietnam": {
         "jewelry": 18.2,
         "bar_and_coin": 41.3
+      },
+      "Taiwan": {
+        "jewelry": 6.0,
+        "bar_and_coin": 5.9
       }
     },
     "2019": {
@@ -1700,6 +1751,10 @@
       "Vietnam": {
         "jewelry": 17.3,
         "bar_and_coin": 39.1
+      },
+      "Taiwan": {
+        "jewelry": 5.4,
+        "bar_and_coin": 5.4
       }
     },
     "2020": {
@@ -1822,6 +1877,10 @@
       "Vietnam": {
         "jewelry": 10.7,
         "bar_and_coin": 29.1
+      },
+      "Taiwan": {
+        "jewelry": 4.1,
+        "bar_and_coin": 6.7
       }
     },
     "2021": {
@@ -1944,6 +2003,10 @@
       "Vietnam": {
         "jewelry": 11.9,
         "bar_and_coin": 31.1
+      },
+      "Taiwan": {
+        "jewelry": 4.2,
+        "bar_and_coin": 6.1
       }
     },
     "2022": {
@@ -2066,6 +2129,10 @@
       "Vietnam": {
         "jewelry": 18.1,
         "bar_and_coin": 41.0
+      },
+      "Taiwan": {
+        "jewelry": 5.0,
+        "bar_and_coin": 6.4
       }
     },
     "2023": {
@@ -2188,6 +2255,10 @@
       "Vietnam": {
         "jewelry": 15.1,
         "bar_and_coin": 40.4
+      },
+      "Taiwan": {
+        "jewelry": 4.4,
+        "bar_and_coin": 6.4
       }
     },
     "2024": {
@@ -2310,6 +2381,10 @@
       "Vietnam": {
         "jewelry": 13.2,
         "bar_and_coin": 42.1
+      },
+      "Taiwan": {
+        "jewelry": 4.2,
+        "bar_and_coin": 8.0
       }
     }
   }
