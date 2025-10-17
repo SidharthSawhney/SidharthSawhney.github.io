@@ -31,6 +31,7 @@ class Timeline {
             .min(2010)
             .max(2024)
             .step(1)
+			.default(2024)
             .width(vis.width)
             .tickFormat(d3.format('d'))
             .displayValue(true)
