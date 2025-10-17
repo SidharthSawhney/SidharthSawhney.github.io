@@ -1,26 +1,12 @@
-
-/*
- * StackedAreaChart - ES6 Class
- * @param  parentElement 	-- the HTML element in which to draw the visualization
- * @param  data             -- the data the that's provided initially
- * @param  displayData      -- the data that will be used finally (which might vary based on the selection)
- *
- * @param  focus            -- a switch that indicates the current mode (focus or stacked overview)
- * @param  selectedIndex    -- a global 'variable' inside the class that keeps track of the index of the selected area
- */
-
 class CountryPanel {
 
-// constructor method to initialize StackedAreaChart object
 constructor(parentElement, internalData, externalData) {
     this.parentElement = parentElement;
-    this.internalData = internalData; // Internal data (year -> country -> {jewelry, bar_and_coin})
-    this.externalData = externalData; // External data for color scale
+    this.internalData = internalData;
+    this.externalData = externalData;
     this.selectedCountry = null;
     this.currentYear = "2024";
-    this.displayData = [];
     
-    // Create the same color scale as the world map (log scale)
     let allValues = [];
     Object.keys(externalData).forEach(year => {
         allValues = allValues.concat(Object.values(externalData[year]));
@@ -35,25 +21,15 @@ constructor(parentElement, internalData, externalData) {
         .clamp(true);
 }
 
-
-	/*
-	 * Method that initializes the visualization (static content, e.g. SVG area or axes)
- 	*/
 	initVis(){
 		let vis = this;
 
 		vis.margin = {top: 40, right: 40, bottom: 60, left: 60};
 
 		const container = document.getElementById(vis.parentElement);
-		console.log('Panel container:', container);
-		console.log('Container dimensions:', container.getBoundingClientRect());
-		
 		vis.width = container.getBoundingClientRect().width - vis.margin.left - vis.margin.right;
 		vis.height = container.getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
-		
-		console.log('Panel dimensions:', vis.width, vis.height);
 
-		// SVG drawing area
 		vis.svg = d3.select("#" + vis.parentElement).append("svg")
 			.attr("width", vis.width + vis.margin.left + vis.margin.right)
 			.attr("height", vis.height + vis.margin.top + vis.margin.bottom)
@@ -62,7 +38,6 @@ constructor(parentElement, internalData, externalData) {
 		vis.g = vis.svg.append("g")
 			.attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
-		// Create tooltip
 		vis.tooltip = d3.select("body").append("div")
 			.attr("class", "country-panel-tooltip")
 			.style("position", "absolute")
@@ -75,7 +50,6 @@ constructor(parentElement, internalData, externalData) {
 			.style("display", "none")
 			.style("z-index", "10000");
 
-		// Placeholder text when no country is selected
 		vis.placeholderText = vis.g.append("text")
 			.attr("x", vis.width / 2)
 			.attr("y", vis.height / 2)
@@ -85,91 +59,21 @@ constructor(parentElement, internalData, externalData) {
 			.text("Select a country to view details");
 	}
 
-	/*
- 	* Data wrangling
- 	*/
-	wrangleData(){
-		let vis = this;
-        
-        vis.displayData = vis.stackedData;
-
-
-		// Update the visualization
-		vis.updateVis();
-	}
-
-	/*
-	 * The drawing function - should use the D3 update sequence (enter, update, exit)
- 	* Function parameters only needed if different kinds of updates are needed
- 	*/
-	updateVis(){
-		// let vis = this;
-
-		// // Update domain
-        // // Get the maximum of the multi-dimensional array or in other words, get the highest peak of the uppermost layer
-        // vis.y.domain([0, d3.max(vis.displayData, function(d) {
-        //     return d3.max(d, function(e) {
-        //         return e[1];
-        //     });
-        // })
-        // ]);
-
-		// // Draw the layers
-		// let categories = vis.svg.selectAll(".area")
-		// 	.data(vis.displayData);
-
-		// categories.enter().append("path")
-		// 	.attr("class", "area")
-		// 	.merge(categories)
-		// 	.style("fill", d => {
-		// 		return vis.colorScale(d)
-		// 	})
-		// 	.attr("d", d => vis.area(d))
-		// 	.on("mouseover", (_, d) => {
-		// 		vis.tooltip.text(d.key);
-		// 	})
-		// 	.on("mouseout", (_, d) => {
-		// 		vis.tooltip.text("");
-		// 	})
-            
-            
-        //     // TO-DO (Activity IV): update tooltip text on hover
-			
-
-		// categories.exit().remove();
-
-		// // Call axis functions with the new domain
-		// vis.svg.select(".x-axis").call(vis.xAxis);
-		// vis.svg.select(".y-axis").call(vis.yAxis);
-	}
-
-	/*
-	 * Update the visualization for a selected country
-	 */
 	updateCountry(countryName, year) {
 		let vis = this;
 		
-		console.log('updateCountry called with:', countryName, year, 'type:', typeof year);
-		console.log('Internal data:', vis.internalData);
-		
 		vis.selectedCountry = countryName;
-		vis.currentYear = year.toString(); // Convert to string for consistency
+		vis.currentYear = year.toString();
 		
-		// Hide placeholder text
 		if (vis.placeholderText) {
 			vis.placeholderText.remove();
 			vis.placeholderText = null;
 		}
 		
-		// Get data for this country for the selected year (ensure year is string)
 		const yearString = year.toString();
 		const yearData = vis.internalData[yearString];
-		console.log('Year data:', yearData);
 		
-		// Check if data exists for this country
 		if (!yearData || !yearData[countryName]) {
-			console.log(`No data available for ${countryName} in ${year}`);
-			// Show "No data" message
 			vis.g.selectAll(".viz-content").remove();
 			vis.g.append("text")
 				.attr("class", "viz-content")
@@ -182,12 +86,8 @@ constructor(parentElement, internalData, externalData) {
 			return;
 		}
 		
-		console.log(`Data for ${countryName}:`, yearData[countryName]);
-		
-		// Clear previous visualization
 		vis.g.selectAll(".viz-content").remove();
 		
-		// Create data for all years showing TOTAL consumption (jewelry + bar_and_coin)
 		const data = [];
 		const years = Object.keys(vis.internalData).sort();
 		
@@ -198,7 +98,6 @@ constructor(parentElement, internalData, externalData) {
 				const barAndCoin = countryYearData.bar_and_coin || 0;
 				const total = jewelry + barAndCoin;
 				
-				// Get external data value for color scale
 				const externalValue = vis.externalData[y] && vis.externalData[y][countryName] 
 					? vis.externalData[y][countryName] 
 					: null;
@@ -209,25 +108,21 @@ constructor(parentElement, internalData, externalData) {
 					jewelry: jewelry,
 					barAndCoin: barAndCoin,
 					externalValue: externalValue,
-					isSelected: y === yearString  // Compare strings
+					isSelected: y === yearString
 				});
 			}
 		});
 		
-		console.log('All years data:', data);
-		
-		// Scales
 		const xScale = d3.scaleBand()
 			.domain(data.map(d => d.year))
 			.range([0, vis.width])
-			.padding(0.8); // Increased padding to make bars thinner
+			.padding(0.8);
 		
 		const yScale = d3.scaleLinear()
 			.domain([0, d3.max(data, d => d.total)])
-			.range([vis.height, 40]) // Leave more space at top for legend
+			.range([vis.height, 40])
 			.nice();
 		
-		// Draw bars with heatmap color scale
 		vis.g.selectAll(".bar")
 			.data(data)
 			.enter()
@@ -238,13 +133,12 @@ constructor(parentElement, internalData, externalData) {
 			.attr("width", xScale.bandwidth())
 			.attr("height", d => vis.height - yScale(d.total))
 			.attr("fill", d => {
-				// Use color scale based on external data value
 				if (d.externalValue && d.externalValue > 0) {
 					return vis.colorScale(d.externalValue);
 				}
 				return "#cccccc";
 			})
-			.attr("stroke", d => d.isSelected ? "#000" : "none") // Black outline for selected year
+			.attr("stroke", d => d.isSelected ? "#000" : "none")
 			.attr("stroke-width", d => d.isSelected ? 2 : 0)
 			.on("mouseover", function(event, d) {
 				vis.tooltip
@@ -265,8 +159,7 @@ constructor(parentElement, internalData, externalData) {
 				vis.tooltip.style("display", "none");
 			});
 		
-		// Create pie chart generator with larger fixed size
-		const pieRadius = 15; // Fixed larger size for pies
+		const pieRadius = 15;
 		const pie = d3.pie()
 			.value(d => d.value)
 			.sort(null);
@@ -275,7 +168,6 @@ constructor(parentElement, internalData, externalData) {
 			.innerRadius(0)
 			.outerRadius(pieRadius);
 		
-		// Draw pie charts on top of each bar
 		const pieGroups = vis.g.selectAll(".pie-group")
 			.data(data)
 			.enter()
@@ -287,7 +179,6 @@ constructor(parentElement, internalData, externalData) {
 				return `translate(${x}, ${y})`;
 			});
 		
-		// Add pie slices with tooltips
 		pieGroups.each(function(yearData) {
 			const pieData = pie([
 				{ category: "Jewelry", value: yearData.jewelry, color: "#87CEEB" },
@@ -323,7 +214,6 @@ constructor(parentElement, internalData, externalData) {
 				});
 		});
 		
-		// Add value labels on bars (only for selected year)
 		vis.g.selectAll(".label")
 			.data(data.filter(d => d.isSelected))
 			.enter()
@@ -336,9 +226,8 @@ constructor(parentElement, internalData, externalData) {
 			.style("font-weight", "bold")
 			.text(d => d.total.toFixed(1));
 		
-		// Add axes
 		const xAxis = d3.axisBottom(xScale)
-			.tickValues(xScale.domain().filter((d, i) => i % 2 === 0)); // Show every other year
+			.tickValues(xScale.domain().filter((d, i) => i % 2 === 0));
 			
 		const yAxis = d3.axisLeft(yScale);
 		
@@ -353,7 +242,6 @@ constructor(parentElement, internalData, externalData) {
 			.attr("class", "y-axis viz-content")
 			.call(yAxis);
 		
-		// Add y-axis label
 		vis.g.append("text")
 			.attr("class", "viz-content")
 			.attr("transform", "rotate(-90)")
@@ -363,12 +251,18 @@ constructor(parentElement, internalData, externalData) {
 			.style("font-size", "12px")
 			.text("Total Consumption (Tonnes)");
 		
-		// Add legend for pie chart (top right corner)
+		vis.g.append("text")
+			.attr("class", "viz-content")
+			.attr("x", vis.width / 2)
+			.attr("y", vis.height + 45)
+			.attr("text-anchor", "middle")
+			.style("font-size", "12px")
+			.text("Year");
+		
 		const legend = vis.g.append("g")
 			.attr("class", "pie-legend viz-content")
 			.attr("transform", `translate(${vis.width - 100}, 0)`);
 		
-		// Jewelry legend item
 		legend.append("circle")
 			.attr("cx", 0)
 			.attr("cy", 0)
@@ -383,7 +277,6 @@ constructor(parentElement, internalData, externalData) {
 			.style("font-size", "11px")
 			.text("Jewelry");
 		
-		// Bar & Coin legend item
 		legend.append("circle")
 			.attr("cx", 0)
 			.attr("cy", 20)

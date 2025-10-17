@@ -1,28 +1,12 @@
-
-/*
- * StackedAreaChart - ES6 Class
- * @param  parentElement 	-- the HTML element in which to draw the visualization
- * @param  data             -- the data the that's provided initially
- * @param  displayData      -- the data that will be used finally (which might vary based on the selection)
- *
- * @param  focus            -- a switch that indicates the current mode (focus or stacked overview)
- * @param  selectedIndex    -- a global 'variable' inside the class that keeps track of the index of the selected area
- */
-
 class WorldMap {
 
-// constructor method to initialize StackedAreaChart object
 constructor(parentElement, allYearData) {
     this.parentElement = parentElement;
-    this.allYearData = allYearData; // Data for all years
-    this.currentYear = "2024"; // Default year
-    this.countryData = allYearData[this.currentYear]; // Current year's data
-    this.displayData = [];
+    this.allYearData = allYearData;
+    this.currentYear = "2024";
+    this.countryData = allYearData[this.currentYear];
 }
 
-    /*
-     * Method that initializes the visualization (static content, e.g. SVG area or axes)
-      */
     initVis() {
         let vis = this;
 
@@ -38,34 +22,30 @@ constructor(parentElement, allYearData) {
             .style("border", "1px solid black")
             .style("display", "none");
 
-        // SVG drawing area
         vis.svg = d3.select("#" + vis.parentElement).append("svg")
             .attr("width", vis.width + vis.margin.left + vis.margin.right)
-            .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
+            .attr("height", vis.height + vis.margin.top + vis.margin.bottom);
 
         vis.g = vis.svg.append("g")
             .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
-        // Store initial transform for reset
         vis.initialTransform = `translate(${vis.margin.left},${vis.margin.top})`;
 
-        // Setup close button handler
         d3.select("#close-panel").on("click", function() {
-            // Slide out panel
             d3.select("#country-panel").style("right", "-50%");
-            
-            // Reset zoom
             vis.g.transition()
                 .duration(750)
                 .attr("transform", vis.initialTransform);
         });
 
-		// Overlay with path clipping
-		vis.svg.append("defs").append("clipPath")
-			.attr("id", "clip")
-			.append("rect")
-			.attr("width", vis.width)
-			.attr("height", vis.height);
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                d3.select("#country-panel").style("right", "-50%");
+                vis.g.transition()
+                    .duration(750)
+                    .attr("transform", vis.initialTransform);
+            }
+        });
 
         vis.projection = d3.geoMercator()
             .scale(vis.width / 6.5)
@@ -73,28 +53,22 @@ constructor(parentElement, allYearData) {
 
         vis.path = d3.geoPath().projection(vis.projection);
 		
- 		// Calculate min and max values from ALL years for consistent color scale
  		let allValues = [];
  		Object.keys(vis.allYearData).forEach(year => {
  			allValues = allValues.concat(Object.values(vis.allYearData[year]));
  		});
  		
- 		// Filter out negative and zero values for log scale
  		const positiveValues = allValues.filter(v => v > 0);
  		vis.minValue = d3.min(positiveValues);
  		vis.maxValue = d3.max(positiveValues);
 		
-		// Create custom color scale with log scaling for better distribution
-		// Log scale works better for skewed data where some countries consume much more
 		vis.colorScale = d3.scaleLog()
 			.domain([vis.minValue, vis.maxValue])
 			.range(["#ffffcc", "#e67300"])
-			.clamp(true); // Clamp values outside domain
+			.clamp(true);
 		
-		// Draw legend with dynamic scale
 		vis.drawLegend();
 		
- 		// Load world map
  		d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then(worldData => {
  			vis.countryPaths = vis.g.selectAll("path")
  				.data(worldData.features)
@@ -104,7 +78,6 @@ constructor(parentElement, allYearData) {
  				.attr("fill", d => {
  					const countryName = d.properties.name;
  					const value = vis.countryData[countryName];
- 					// Handle undefined, zero, and negative values
  					if (value === undefined || value <= 0) {
  						return "#cccccc";
  					}
@@ -125,20 +98,11 @@ constructor(parentElement, allYearData) {
 				.on("click", function(_, d) {
 					const countryName = d.properties.name;
 					
-					console.log('Country clicked:', countryName);
-					console.log('Current year:', vis.currentYear);
-					console.log('CountryPanel exists?', !!window.countryPanel);
-					
-					// Slide in the panel and set country name
 					d3.select("#country-panel").style("right", "0");
 					d3.select("#country-name").text(countryName);
 					
-					// Update country panel visualization with the selected country
 					if (window.countryPanel) {
-						console.log('Calling updateCountry...');
 						window.countryPanel.updateCountry(countryName, vis.currentYear);
-					} else {
-						console.error('CountryPanel not found!');
 					}
 					
 					const bounds = vis.path.bounds(d);
@@ -146,9 +110,7 @@ constructor(parentElement, allYearData) {
 					const dy = bounds[1][1] - bounds[0][1];
 					const x = (bounds[0][0] + bounds[1][0]) / 2;
 					const y = (bounds[0][1] + bounds[1][1]) / 2;
-					// Scale to fit left half of canvas (width / 2)
 					const scale = 0.9 / Math.max(dx / (vis.width / 2), dy / vis.height);
-					// Center in left half (width / 4 instead of width / 2)
 					const translate = [vis.width / 4 - scale * x, vis.height / 2 - scale * y];
 
 					vis.g.transition()
@@ -156,81 +118,15 @@ constructor(parentElement, allYearData) {
 						.attr("transform", `translate(${translate}) scale(${scale})`);
 				});
 		});
-
-        // TO-DO: (Filter, aggregate, modify data)
-        vis.wrangleData();
     }
 
-    /*
-      * Data wrangling
-      */
-    wrangleData() {
-        let vis = this;
-
-        vis.displayData = vis.stackedData;
-
-
-        // Update the visualization
-        vis.updateVis();
-    }
-
-    /*
-     * The drawing function - should use the D3 update sequence (enter, update, exit)
-      * Function parameters only needed if different kinds of updates are needed
-      */
-    updateVis() {
-        // let vis = this;
-
-        // // Update domain
-        // // Get the maximum of the multi-dimensional array or in other words, get the highest peak of the uppermost layer
-        // vis.y.domain([0, d3.max(vis.displayData, function(d) {
-        //     return d3.max(d, function(e) {
-        //         return e[1];
-        //     });
-        // })
-        // ]);
-
-        // // Draw the layers
-        // let categories = vis.svg.selectAll(".area")
-        // 	.data(vis.displayData);
-
-        // categories.enter().append("path")
-        // 	.attr("class", "area")
-        // 	.merge(categories)
-        // 	.style("fill", d => {
-        // 		return vis.colorScale(d)
-        // 	})
-        // 	.attr("d", d => vis.area(d))
-        // 	.on("mouseover", (_, d) => {
-        // 		vis.tooltip.text(d.key);
-        // 	})
-        // 	.on("mouseout", (_, d) => {
-        // 		vis.tooltip.text("");
-        // 	})
-
-
-        //     // TO-DO (Activity IV): update tooltip text on hover
-
-
-        // categories.exit().remove();
-
-		// // Call axis functions with the new domain
-		// vis.svg.select(".x-axis").call(vis.xAxis);
-		// vis.svg.select(".y-axis").call(vis.yAxis);
-	}
-
-	/*
-	 * Draw the color legend (horizontal)
-	 */
 	drawLegend() {
 		let vis = this;
 
 		const legendSvg = d3.select("#legend");
 		const legendWidth = parseInt(legendSvg.style("width"));
 		const legendHeight = 30;
-		const axisHeight = 20;
 
-		// Create gradient (horizontal)
 		const defs = legendSvg.append("defs");
 		const linearGradient = defs.append("linearGradient")
 			.attr("id", "legend-gradient")
@@ -239,13 +135,11 @@ constructor(parentElement, allYearData) {
 			.attr("x2", "100%")
 			.attr("y2", "0%");
 
-		// Create color stops for gradient using LOGARITHMIC spacing
 		const numStops = 20;
 		const logMin = Math.log(vis.minValue);
 		const logMax = Math.log(vis.maxValue);
 		
 		for (let i = 0; i <= numStops; i++) {
-			// Calculate logarithmically-spaced values
 			const logValue = logMin + (i / numStops) * (logMax - logMin);
 			const value = Math.exp(logValue);
 			
@@ -254,7 +148,6 @@ constructor(parentElement, allYearData) {
 				.attr("stop-color", vis.colorScale(value));
 		}
 
-		// Draw legend rectangle
 		legendSvg.append("rect")
 			.attr("x", 0)
 			.attr("y", 0)
@@ -264,32 +157,26 @@ constructor(parentElement, allYearData) {
 			.style("stroke", "#333")
 			.style("stroke-width", 1);
 
-		// Add scale for axis with dynamic domain (log scale to match color scale)
 		const legendScale = d3.scaleLog()
 			.domain([vis.minValue, vis.maxValue])
 			.range([0, legendWidth]);
 
 		const legendAxis = d3.axisBottom(legendScale)
 			.tickValues([10, 100, 1000])
-			.tickFormat(d3.format(".0f")); // Use integer format for better readability
+			.tickFormat(d3.format(".0f"));
 
-		// Add axis below the color bar
 		legendSvg.append("g")
 			.attr("transform", `translate(0, ${legendHeight})`)
 			.call(legendAxis)
 			.style("font-size", "10px");
 	}
 
-	/*
-	 * Update the map for a new year
-	 */
 	updateYear(year) {
 		let vis = this;
 		
 		vis.currentYear = year.toString();
 		vis.countryData = vis.allYearData[vis.currentYear];
 		
-		// Update country colors
 		if (vis.countryPaths) {
 			vis.countryPaths
 				.transition()
@@ -297,7 +184,6 @@ constructor(parentElement, allYearData) {
 				.attr("fill", d => {
 					const countryName = d.properties.name;
 					const value = vis.countryData[countryName];
-					// Handle undefined, zero, and negative values
 					if (value === undefined || value <= 0) {
 						return "#cccccc";
 					}
