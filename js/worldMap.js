@@ -60,6 +60,20 @@ constructor(parentElement) {
         vis.g = vis.svg.append("g")
 			.attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
+        // Store initial transform for reset
+        vis.initialTransform = `translate(${vis.margin.left},${vis.margin.top})`;
+
+        // Setup close button handler
+        d3.select("#close-panel").on("click", function() {
+            // Hide panel
+            d3.select("#country-panel").style("display", "none");
+            
+            // Reset zoom
+            vis.g.transition()
+                .duration(750)
+                .attr("transform", vis.initialTransform);
+        });
+
 		// Overlay with path clipping
 		vis.svg.append("defs").append("clipPath")
 			.attr("id", "clip")
@@ -69,7 +83,7 @@ constructor(parentElement) {
 
 
         vis.projection = d3.geoMercator()
-            .scale(130)
+            .scale(vis.width / 6.5)
             .translate([vis.width / 2, vis.height / 1.5]);
 
         vis.path = d3.geoPath().projection(vis.projection);
@@ -93,13 +107,18 @@ constructor(parentElement) {
                     vis.tooltip.style("display", "none");
                 })
                 .on("click", function(_, d) {
+                    // Show the panel
+                    d3.select("#country-panel").style("display", "block");
+                    
                     const bounds = vis.path.bounds(d);
                     const dx = bounds[1][0] - bounds[0][0];
                     const dy = bounds[1][1] - bounds[0][1];
                     const x = (bounds[0][0] + bounds[1][0]) / 2;
                     const y = (bounds[0][1] + bounds[1][1]) / 2;
-                    const scale = 0.9 / Math.max(dx / vis.width, dy / vis.height);
-                    const translate = [vis.width / 2 - scale * x, vis.height / 2 - scale * y];
+                    // Scale to fit left half of canvas (width / 2)
+                    const scale = 0.9 / Math.max(dx / (vis.width / 2), dy / vis.height);
+                    // Center in left half (width / 4 instead of width / 2)
+                    const translate = [vis.width / 4 - scale * x, vis.height / 2 - scale * y];
 
                     vis.g.transition()
                         .duration(750)

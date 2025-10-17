@@ -15,29 +15,36 @@
 </head>
 <body>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-8 offset-2"
-             style="margin-top: 5vh; border: thin solid grey; border-radius: 5px; background: rgba(221,221,221,0.45)">
+<div class="container-fluid" style="height: 100vh; display: flex; flex-direction: column; padding: 0; margin: 0;">
+    <!-- header -->
+    <div style="height: 10vh; display: flex; align-items: center; justify-content: center; padding: 20px;">
+        <div style="text-align: center;">
+            <h1>⭐️ Gold Consumer Demand by Country</h1> 
+            <h2 id="year-label">Year: 2024</h2>
+        </div>
+    </div>
 
-            <!-- header -->
-            <div class="row justify-content-center" style="height: 15vh">
-                <div class="align-self-center">
-                    <h1>⭐️ Gold Consumer Demand by Country</h1> 
-                    <h2 id="year-label">Year: 2024</h2>
-                </div>
-            </div>
-
-            <!-- graph -->
-            <div class="row justify-content-center" style="height: 60vh">
-                <div class="align-self-center" id="world-map" style="height: 100%; width: 100%"></div>
-            </div>
-
-            <!-- brush -->
-            <div class="row justify-content-center" style="height: 15vh">
-                <div class="align-self-center" id="timeline" style="height: 100%; width: 100%"></div>
+    <!-- graph -->
+    <div style="flex: 1; width: 100%; overflow: hidden; margin-bottom: 20px; position: relative;">
+        <div id="world-map" style="height: 100%; width: 100%;"></div>
+        
+        <!-- Country details panel -->
+        <div id="country-panel" style="position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: white; border-left: 2px solid #333; display: none; z-index: 1000; padding: 20px; box-sizing: border-box;">
+            <!-- Close button -->
+            <button id="close-panel" style="position: absolute; top: 15px; right: 15px; width: 30px; height: 30px; border: none; background: #333; color: white; font-size: 20px; cursor: pointer; border-radius: 3px; display: flex; align-items: center; justify-content: center; padding: 0;">
+                ×
+            </button>
+            
+            <!-- Panel content will go here -->
+            <div id="panel-content" style="margin-top: 40px;">
+                <!-- Empty for now -->
             </div>
         </div>
+    </div>
+
+    <!-- timeline slider -->
+    <div style="height: 10vh; width: 100%; display: flex; align-items: center; padding: 0 40px; margin-bottom: 20px;">
+        <div id="timeline" style="height: 100%; width: 100%;"></div>
     </div>
 </div>
 
