@@ -23,14 +23,14 @@
             <!-- header -->
             <div class="row justify-content-center" style="height: 15vh">
                 <div class="align-self-center">
-                    <h1>GOLD</h1>
-                    <h2>Gold Demand by Country</h2>
+                    <h1>⭐️ Gold Consumer Demand by Country</h1> 
+                    <h2 id="year-label">Year: 2024</h2>
                 </div>
             </div>
 
             <!-- graph -->
             <div class="row justify-content-center" style="height: 60vh">
-                <div class="align-self-center" id="stacked-area-chart" style="height: 100%; width: 100%"></div>
+                <div class="align-self-center" id="world-map" style="height: 100%; width: 100%"></div>
             </div>
 
             <!-- brush -->
@@ -46,10 +46,11 @@
 
 <!-- d3 -->
 <script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://unpkg.com/d3-simple-slider"></script>
 
-<!-- Visualization objects
-<script src="js/stackedAreaChart.js"></script>
-<script src="js/timeline.js"></script> -->
+<!-- Visualization objects -->
+<script src="js/worldMap.js"></script>
+<script src="js/timeline.js"></script>
 
 <!-- Load data, create visualizations -->
 <script src="js/main.js"></script>
