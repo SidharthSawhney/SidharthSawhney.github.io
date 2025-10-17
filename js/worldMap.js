@@ -14,23 +14,8 @@ class WorldMap {
 // constructor method to initialize StackedAreaChart object
 constructor(parentElement) {
     this.parentElement = parentElement;
-    // this.data = data;
+    this.countryData = {};
     this.displayData = [];
-
-    let colors = ['#a6cee3','#1f78b4','#b2df8a','#33a02c','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a'];
-
-    // grab all the keys from the key value pairs in data (filter out 'year' ) to get a list of categories
-    // this.dataCategories = Object.keys(this.data[0]).filter(d=>d !== "Year")
-
-    // prepare colors for range
-    // let colorArray = this.dataCategories.map( (d,i) => {
-    //     return colors[i%10]
-    // })
-
-    // // Set ordinal color scale
-    // this.colorScale = d3.scaleOrdinal()
-    //     .domain(this.dataCategories)
-    //     .range(colorArray);
 }
 
 
@@ -65,8 +50,8 @@ constructor(parentElement) {
 
         // Setup close button handler
         d3.select("#close-panel").on("click", function() {
-            // Hide panel
-            d3.select("#country-panel").style("display", "none");
+            // Slide out panel
+            d3.select("#country-panel").style("right", "-50%");
             
             // Reset zoom
             vis.g.transition()
@@ -81,19 +66,41 @@ constructor(parentElement) {
 			.attr("width", vis.width)
 			.attr("height", vis.height);
 
-
         vis.projection = d3.geoMercator()
             .scale(vis.width / 6.5)
             .translate([vis.width / 2, vis.height / 1.5]);
 
         vis.path = d3.geoPath().projection(vis.projection);
-		d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then(worldData => {
+        
+        // Load country data first, then world map
+        d3.json("data/new.json").then(countryData => {
+            vis.countryData = countryData;
+            
+            // Calculate min and max values from data
+            const values = Object.values(countryData);
+            vis.minValue = d3.min(values);
+            vis.maxValue = d3.max(values);
+            
+            // Create color scale based on actual data range
+            vis.colorScale = d3.scaleSequential()
+                .interpolator(d3.interpolateYlOrRd)
+                .domain([vis.minValue, vis.maxValue]);
+            
+            // Draw legend with dynamic scale
+            vis.drawLegend();
+            
+            // Load world map
+            d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then(worldData => {
             vis.g.selectAll("path")
                 .data(worldData.features)
                 .enter()
                 .append("path")
                 .attr("d", vis.path)
-                .attr("fill", "#000000")
+                .attr("fill", d => {
+                    const countryName = d.properties.name;
+                    const value = vis.countryData[countryName];
+                    return value !== undefined ? vis.colorScale(value) : "#cccccc";
+                })
                 .attr("stroke", "#333333")
                 .attr("stroke-width", 0.5)
                 .style("opacity", 0.9)
@@ -107,8 +114,8 @@ constructor(parentElement) {
                     vis.tooltip.style("display", "none");
                 })
                 .on("click", function(_, d) {
-                    // Show the panel and set country name
-                    d3.select("#country-panel").style("display", "block");
+                    // Slide in the panel and set country name
+                    d3.select("#country-panel").style("right", "0");
                     d3.select("#country-name").text(d.properties.name);
                     
                     const bounds = vis.path.bounds(d);
@@ -125,6 +132,7 @@ constructor(parentElement) {
                         .duration(750)
                         .attr("transform", `translate(${translate}) scale(${scale})`);
                 });
+            });
         });
 
 		// TO-DO: (Filter, aggregate, modify data)
@@ -188,5 +196,60 @@ constructor(parentElement) {
 		// // Call axis functions with the new domain
 		// vis.svg.select(".x-axis").call(vis.xAxis);
 		// vis.svg.select(".y-axis").call(vis.yAxis);
+	}
+
+	/*
+	 * Draw the color legend
+	 */
+	drawLegend() {
+		let vis = this;
+
+		const legendSvg = d3.select("#legend");
+		const legendWidth = 30;
+		const legendHeight = parseInt(legendSvg.style("height"));
+		const axisWidth = 35;
+
+		// Create gradient
+		const defs = legendSvg.append("defs");
+		const linearGradient = defs.append("linearGradient")
+			.attr("id", "legend-gradient")
+			.attr("x1", "0%")
+			.attr("y1", "100%")
+			.attr("x2", "0%")
+			.attr("y2", "0%");
+
+		// Create color stops for gradient using dynamic values
+		const numStops = 10;
+		for (let i = 0; i <= numStops; i++) {
+			const value = vis.minValue + (i / numStops) * (vis.maxValue - vis.minValue);
+			linearGradient.append("stop")
+				.attr("offset", `${(i / numStops) * 100}%`)
+				.attr("stop-color", vis.colorScale(value));
+		}
+
+		// Draw legend rectangle
+		legendSvg.append("rect")
+			.attr("x", axisWidth)
+			.attr("y", 0)
+			.attr("width", legendWidth)
+			.attr("height", legendHeight)
+			.style("fill", "url(#legend-gradient)")
+			.style("stroke", "#333")
+			.style("stroke-width", 1);
+
+		// Add scale for axis with dynamic domain
+		const legendScale = d3.scaleLinear()
+			.domain([vis.minValue, vis.maxValue])
+			.range([legendHeight, 0]);
+
+		const legendAxis = d3.axisLeft(legendScale)
+			.ticks(6)
+			.tickFormat(d3.format(".2f"));
+
+		// Add axis on the left side
+		legendSvg.append("g")
+			.attr("transform", `translate(${axisWidth}, 0)`)
+			.call(legendAxis)
+			.style("font-size", "10px");
 	}
 }
