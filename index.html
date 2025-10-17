@@ -29,14 +29,17 @@
         <div id="world-map" style="height: 100%; width: 100%;"></div>
         
         <!-- Country details panel -->
-        <div id="country-panel" style="position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: white; border-left: 2px solid #333; display: none; z-index: 1000; padding: 20px; box-sizing: border-box;">
+        <div id="country-panel" style="position: absolute; top: 20px; right: 20px; width: calc(50% - 40px); height: calc(100% - 40px); background: white; border: 2px solid #333; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); display: none; z-index: 1000; padding: 30px; box-sizing: border-box;">
             <!-- Close button -->
             <button id="close-panel" style="position: absolute; top: 15px; right: 15px; width: 30px; height: 30px; border: none; background: #333; color: white; font-size: 20px; cursor: pointer; border-radius: 3px; display: flex; align-items: center; justify-content: center; padding: 0;">
                 ×
             </button>
             
+            <!-- Country name header -->
+            <h2 id="country-name" style="margin: 0 0 20px 0; font-size: 1.8rem; font-weight: 600; color: #333; padding-right: 40px;">Country Name</h2>
+            
             <!-- Panel content will go here -->
-            <div id="panel-content" style="margin-top: 40px;">
+            <div id="panel-content">
                 <!-- Empty for now -->
             </div>
         </div>

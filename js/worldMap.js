@@ -107,8 +107,9 @@ constructor(parentElement) {
                     vis.tooltip.style("display", "none");
                 })
                 .on("click", function(_, d) {
-                    // Show the panel
+                    // Show the panel and set country name
                     d3.select("#country-panel").style("display", "block");
+                    d3.select("#country-name").text(d.properties.name);
                     
                     const bounds = vis.path.bounds(d);
                     const dx = bounds[1][0] - bounds[0][0];
