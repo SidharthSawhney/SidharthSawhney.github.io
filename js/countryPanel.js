@@ -291,7 +291,7 @@ constructor(parentElement, internalData, externalData) {
 		pieGroups.each(function(yearData) {
 			const pieData = pie([
 				{ category: "Jewelry", value: yearData.jewelry, color: "#87CEEB" },
-				{ category: "Bar & Coin", value: yearData.barAndCoin, color: "#33cc33" }
+				{ category: "Bar & Coin", value: yearData.barAndCoin, color: "#9370DB" }
 			]);
 			
 			d3.select(this)
@@ -388,7 +388,7 @@ constructor(parentElement, internalData, externalData) {
 			.attr("cx", 0)
 			.attr("cy", 20)
 			.attr("r", 6)
-			.attr("fill", "#33cc33")
+			.attr("fill", "#9370DB")
 			.attr("stroke", "white")
 			.attr("stroke-width", 1);
 		
