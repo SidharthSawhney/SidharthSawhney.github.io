@@ -19,7 +19,7 @@ function loadData() {
 }
 
 function yearUpdate(year) {
-    d3.select('#year-label').text("Year: " + year);
+    d3.select('#main-title').text("World Gold Consumer Demand in " + year);
     
     if (worldMap) {
         worldMap.updateYear(year);
