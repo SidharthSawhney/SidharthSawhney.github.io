@@ -81,10 +81,10 @@ constructor(parentElement) {
             vis.minValue = d3.min(values);
             vis.maxValue = d3.max(values);
             
-            // Create color scale based on actual data range
-            vis.colorScale = d3.scaleSequential()
-                .interpolator(d3.interpolateYlOrRd)
-                .domain([vis.minValue, vis.maxValue]);
+            // Create custom color scale: light yellow to bright orange
+            vis.colorScale = d3.scaleLinear()
+                .domain([vis.minValue, vis.maxValue])
+                .range(["#ffffcc", "#e67300"]);
             
             // Draw legend with dynamic scale
             vis.drawLegend();
@@ -199,23 +199,23 @@ constructor(parentElement) {
 	}
 
 	/*
-	 * Draw the color legend
+	 * Draw the color legend (horizontal)
 	 */
 	drawLegend() {
 		let vis = this;
 
 		const legendSvg = d3.select("#legend");
-		const legendWidth = 30;
-		const legendHeight = parseInt(legendSvg.style("height"));
-		const axisWidth = 35;
+		const legendWidth = parseInt(legendSvg.style("width"));
+		const legendHeight = 30;
+		const axisHeight = 20;
 
-		// Create gradient
+		// Create gradient (horizontal)
 		const defs = legendSvg.append("defs");
 		const linearGradient = defs.append("linearGradient")
 			.attr("id", "legend-gradient")
 			.attr("x1", "0%")
-			.attr("y1", "100%")
-			.attr("x2", "0%")
+			.attr("y1", "0%")
+			.attr("x2", "100%")
 			.attr("y2", "0%");
 
 		// Create color stops for gradient using dynamic values
@@ -229,7 +229,7 @@ constructor(parentElement) {
 
 		// Draw legend rectangle
 		legendSvg.append("rect")
-			.attr("x", axisWidth)
+			.attr("x", 0)
 			.attr("y", 0)
 			.attr("width", legendWidth)
 			.attr("height", legendHeight)
@@ -240,15 +240,15 @@ constructor(parentElement) {
 		// Add scale for axis with dynamic domain
 		const legendScale = d3.scaleLinear()
 			.domain([vis.minValue, vis.maxValue])
-			.range([legendHeight, 0]);
+			.range([0, legendWidth]);
 
-		const legendAxis = d3.axisLeft(legendScale)
-			.ticks(6)
+		const legendAxis = d3.axisBottom(legendScale)
+			.ticks(5)
 			.tickFormat(d3.format(".2f"));
 
-		// Add axis on the left side
+		// Add axis below the color bar
 		legendSvg.append("g")
-			.attr("transform", `translate(${axisWidth}, 0)`)
+			.attr("transform", `translate(0, ${legendHeight})`)
 			.call(legendAxis)
 			.style("font-size", "10px");
 	}
