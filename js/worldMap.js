@@ -125,13 +125,20 @@ constructor(parentElement, allYearData) {
 				.on("click", function(_, d) {
 					const countryName = d.properties.name;
 					
+					console.log('Country clicked:', countryName);
+					console.log('Current year:', vis.currentYear);
+					console.log('CountryPanel exists?', !!window.countryPanel);
+					
 					// Slide in the panel and set country name
 					d3.select("#country-panel").style("right", "0");
 					d3.select("#country-name").text(countryName);
 					
 					// Update country panel visualization with the selected country
 					if (window.countryPanel) {
+						console.log('Calling updateCountry...');
 						window.countryPanel.updateCountry(countryName, vis.currentYear);
+					} else {
+						console.error('CountryPanel not found!');
 					}
 					
 					const bounds = vis.path.bounds(d);

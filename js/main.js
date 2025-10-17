@@ -1,6 +1,7 @@
 
-// Variables for the visualization instances
-let worldMap, countryPanel, timeline;
+// Variables for the visualization instances (make them global)
+let worldMap, timeline;
+let countryPanel; // Will be attached to window for access from worldMap
 
 
 // Start application by loading the data
@@ -16,7 +17,8 @@ function loadData() {
 
         // Instantiate visualization objects
         worldMap = new WorldMap("world-map", externalData);
-        countryPanel = new CountryPanel("panel-content", internalData);
+        countryPanel = new CountryPanel("panel-content", internalData, externalData);
+        window.countryPanel = countryPanel; // Make it globally accessible
         timeline = new Timeline("timeline");
 
         // Initialize visualizations with default year 2024
