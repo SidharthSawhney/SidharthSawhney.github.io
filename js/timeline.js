@@ -35,8 +35,10 @@ class Timeline {
             .width(vis.width)
             .tickFormat(d3.format('d'))
             .displayValue(true)
+            .default(2024)
             .on('onchange', (val) => {
-                d3.select('#year-label').text("Year: " + val);
+                // Call centralized year update function
+                yearUpdate(val);
             });
 
         // SVG drawing area
