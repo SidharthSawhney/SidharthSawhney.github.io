@@ -12,12 +12,11 @@
 class WorldMap {
 
 // constructor method to initialize StackedAreaChart object
-constructor(parentElement) {
+constructor(parentElement, countryData) {
     this.parentElement = parentElement;
-    this.countryData = {};
+    this.countryData = countryData;
     this.displayData = [];
 }
-
 
     /*
      * Method that initializes the visualization (static content, e.g. SVG area or axes)
@@ -71,73 +70,67 @@ constructor(parentElement) {
             .translate([vis.width / 2, vis.height / 1.5]);
 
         vis.path = d3.geoPath().projection(vis.projection);
-        
-        // Load country data first, then world map
-        d3.json("data/new.json").then(countryData => {
-            vis.countryData = countryData;
-            
-            // Calculate min and max values from data
-            const values = Object.values(countryData);
-            vis.minValue = d3.min(values);
-            vis.maxValue = d3.max(values);
-            
-            // Create custom color scale: light yellow to bright orange
-            vis.colorScale = d3.scaleLinear()
-                .domain([vis.minValue, vis.maxValue])
-                .range(["#ffffcc", "#e67300"]);
-            
-            // Draw legend with dynamic scale
-            vis.drawLegend();
-            
-            // Load world map
-            d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then(worldData => {
-            vis.g.selectAll("path")
-                .data(worldData.features)
-                .enter()
-                .append("path")
-                .attr("d", vis.path)
-                .attr("fill", d => {
-                    const countryName = d.properties.name;
-                    const value = vis.countryData[countryName];
-                    return value !== undefined ? vis.colorScale(value) : "#cccccc";
-                })
-                .attr("stroke", "#333333")
-                .attr("stroke-width", 0.5)
-                .style("opacity", 0.9)
-                .on("mouseover", function (event, d) {
-                    vis.tooltip.style("display", "block").text(d.properties.name);
-                })
-                .on("mousemove", function (event) {
-                    vis.tooltip.style("left", (event.pageX + 10) + "px").style("top", (event.pageY + 10) + "px");
-                })
-                .on("mouseout", function () {
-                    vis.tooltip.style("display", "none");
-                })
-                .on("click", function(_, d) {
-                    // Slide in the panel and set country name
-                    d3.select("#country-panel").style("right", "0");
-                    d3.select("#country-name").text(d.properties.name);
-                    
-                    const bounds = vis.path.bounds(d);
-                    const dx = bounds[1][0] - bounds[0][0];
-                    const dy = bounds[1][1] - bounds[0][1];
-                    const x = (bounds[0][0] + bounds[1][0]) / 2;
-                    const y = (bounds[0][1] + bounds[1][1]) / 2;
-                    // Scale to fit left half of canvas (width / 2)
-                    const scale = 0.9 / Math.max(dx / (vis.width / 2), dy / vis.height);
-                    // Center in left half (width / 4 instead of width / 2)
-                    const translate = [vis.width / 4 - scale * x, vis.height / 2 - scale * y];
+		
+		// Calculate min and max values from data
+		const values = Object.values(vis.countryData);
+		vis.minValue = d3.min(values);
+		vis.maxValue = d3.max(values);
+		
+		// Create custom color scale: light yellow to bright orange
+		vis.colorScale = d3.scaleLinear()
+			.domain([vis.minValue, vis.maxValue])
+			.range(["#ffffcc", "#e67300"]);
+		
+		// Draw legend with dynamic scale
+		vis.drawLegend();
+		
+		// Load world map
+		d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then(worldData => {
+			vis.g.selectAll("path")
+				.data(worldData.features)
+				.enter()
+				.append("path")
+				.attr("d", vis.path)
+				.attr("fill", d => {
+					const countryName = d.properties.name;
+					const value = vis.countryData[countryName];
+					return value !== undefined ? vis.colorScale(value) : "#cccccc";
+				})
+				.attr("stroke", "#333333")
+				.attr("stroke-width", 0.5)
+				.style("opacity", 0.9)
+				.on("mouseover", function (event, d) {
+					vis.tooltip.style("display", "block").text(d.properties.name);
+				})
+				.on("mousemove", function (event) {
+					vis.tooltip.style("left", (event.pageX + 10) + "px").style("top", (event.pageY + 10) + "px");
+				})
+				.on("mouseout", function () {
+					vis.tooltip.style("display", "none");
+				})
+				.on("click", function(_, d) {
+					// Slide in the panel and set country name
+					d3.select("#country-panel").style("right", "0");
+					d3.select("#country-name").text(d.properties.name);
+					
+					const bounds = vis.path.bounds(d);
+					const dx = bounds[1][0] - bounds[0][0];
+					const dy = bounds[1][1] - bounds[0][1];
+					const x = (bounds[0][0] + bounds[1][0]) / 2;
+					const y = (bounds[0][1] + bounds[1][1]) / 2;
+					// Scale to fit left half of canvas (width / 2)
+					const scale = 0.9 / Math.max(dx / (vis.width / 2), dy / vis.height);
+					// Center in left half (width / 4 instead of width / 2)
+					const translate = [vis.width / 4 - scale * x, vis.height / 2 - scale * y];
 
-                    vis.g.transition()
-                        .duration(750)
-                        .attr("transform", `translate(${translate}) scale(${scale})`);
-                });
-            });
-        });
+					vis.g.transition()
+						.duration(750)
+						.attr("transform", `translate(${translate}) scale(${scale})`);
+				});
+		});
 
         // TO-DO: (Filter, aggregate, modify data)
         vis.wrangleData();
-
     }
 
     /*

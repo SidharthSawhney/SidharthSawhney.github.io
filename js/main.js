@@ -1,13 +1,13 @@
 
 // Variables for the visualization instances
-let worldMap, timeline;
+let worldMap, countryPanel, timeline;
 
 
 // Start application by loading the data
 loadData();
 
 function loadData() {
-    // d3.json("data/"). then(jsonData=>{
+    d3.json("data/new.json"). then(jsonData=>{
             
     //     // prepare data
     //     let data = prepareDataForStudents(jsonData)
@@ -15,13 +15,15 @@ function loadData() {
     //     console.log('data loaded ')
 
     //     // TO-DO (Activity I): instantiate visualization objects
-		areachart = new WorldMap("world-map") //, data.layers)
+		areachart = new WorldMap("world-map", jsonData)
+		countryPanel = new CountryPanel("panel-content", jsonData)
 		timeline = new Timeline("timeline")
 
     //     // TO-DO (Activity I):  init visualizations
 		areachart.initVis()
+		countryPanel.initVis()
 		timeline.initVis()
-    // });
+    });
 }
 
 
