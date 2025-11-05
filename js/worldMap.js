@@ -166,7 +166,9 @@ constructor(parentElement, allYearData) {
 		let vis = this;
 
 		const legendSvg = d3.select("#legend");
-		const legendWidth = parseInt(legendSvg.style("width"));
+		legendSvg.selectAll("*").remove();
+		
+		const legendWidth = 450;
 		const legendHeight = 30;
 
 		const defs = legendSvg.append("defs");
@@ -231,6 +233,37 @@ constructor(parentElement, allYearData) {
 					}
 					return vis.colorScale(value);
 				});
+		}
+	}
+
+	resize() {
+		let vis = this;
+		
+		vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
+		vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
+		
+		vis.svg
+			.attr("width", vis.width + vis.margin.left + vis.margin.right)
+			.attr("height", vis.height + vis.margin.top + vis.margin.bottom);
+		
+		vis.projection
+			.scale(vis.width / 6.5)
+			.translate([vis.width / 2, vis.height / 1.5]);
+		
+		vis.path = d3.geoPath().projection(vis.projection);
+		
+		vis.initialTransform = `translate(${vis.margin.left},${vis.margin.top})`;
+		
+		if (vis.countryPaths) {
+			vis.countryPaths.attr("d", vis.path);
+		}
+		
+		vis.drawLegend();
+		
+		if (vis.selectedPath) {
+			vis.g.transition()
+				.duration(0)
+				.attr("transform", vis.initialTransform);
 		}
 	}
 }

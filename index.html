@@ -17,15 +17,15 @@
 
 <div class="container-fluid" style="height: 100vh; display: flex; flex-direction: column; padding: 0; margin: 0;">
     <!-- header with horizontal color scale -->
-    <div style="height: 10vh; display: flex; align-items: center; justify-content: space-between; padding: 20px 40px;">
-        <div style="text-align: left;">
+    <div id="header-section" style="min-height: 10vh; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 20px 40px; gap: 20px;">
+        <div style="text-align: left; flex: 0 1 auto;">
             <h1 id="main-title">World Gold Consumer Demand in 2024</h1> 
             <h2 style="font-style: italic; color: #666;">Click on a country to see more</h2>
         </div>
         
         <!-- Horizontal color legend -->
-        <div style="display: flex; align-items: flex-end; gap: 15px; margin-right: 20px; margin-bottom: -35px;">
-            <span style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 50px;">Total Consumption of Gold (Tonnes)</span>
+        <div id="legend-container" style="display: flex; align-items: flex-end; gap: 15px; flex: 0 1 auto; margin-bottom: -35px;">
+            <span id="legend-label" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 50px; white-space: nowrap;">Total Consumption of Gold (Tonnes)</span>
             <svg id="legend" style="width: 450px; height: 80px;"></svg>
         </div>
     </div>

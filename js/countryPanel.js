@@ -291,4 +291,24 @@ constructor(parentElement, internalData, externalData) {
 			.style("font-size", "11px")
 			.text("Bar & Coin");
 	}
+
+	resize() {
+		let vis = this;
+		
+		const container = document.getElementById(vis.parentElement);
+		vis.width = container.getBoundingClientRect().width - vis.margin.left - vis.margin.right;
+		vis.height = container.getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
+		
+		vis.svg
+			.attr("width", vis.width + vis.margin.left + vis.margin.right)
+			.attr("height", vis.height + vis.margin.top + vis.margin.bottom);
+		
+		if (vis.selectedCountry) {
+			vis.updateCountry(vis.selectedCountry, vis.currentYear);
+		} else if (vis.placeholderText) {
+			vis.placeholderText
+				.attr("x", vis.width / 2)
+				.attr("y", vis.height / 2);
+		}
+	}
 }

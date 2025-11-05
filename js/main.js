@@ -15,7 +15,25 @@ function loadData() {
         worldMap.initVis();
         countryPanel.initVis();
         timeline.initVis();
+
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(handleResize, 150);
+        });
     });
+}
+
+function handleResize() {
+    if (worldMap) {
+        worldMap.resize();
+    }
+    if (timeline) {
+        timeline.resize();
+    }
+    if (countryPanel) {
+        countryPanel.resize();
+    }
 }
 
 function yearUpdate(year) {
