@@ -192,8 +192,8 @@ constructor(parentElement, internalData, externalData) {
 				.append("path")
 				.attr("d", arc)
 				.attr("fill", d => d.data.color)
-				.attr("stroke", "white")
-				.attr("stroke-width", 1)
+				.attr("stroke", "none")
+				.attr("stroke-width", 0)
 				.on("mouseover", function(event, d) {
 					vis.tooltip
 						.style("display", "block")
@@ -217,14 +217,22 @@ constructor(parentElement, internalData, externalData) {
 		vis.g.selectAll(".label")
 			.data(data.filter(d => d.isSelected))
 			.enter()
-			.append("text")
+			.append("foreignObject")
 			.attr("class", "label viz-content")
-			.attr("x", d => xScale(d.year) + xScale.bandwidth() / 2)
-			.attr("y", d => yScale(d.total) - pieRadius - 10)
-			.attr("text-anchor", "middle")
+			.attr("x", d => xScale(d.year) + xScale.bandwidth() / 2 - 40)
+			.attr("y", d => yScale(d.total) - pieRadius - 45)
+			.attr("width", 80)
+			.attr("height", 50)
+			.append("xhtml:div")
+			.style("text-align", "center")
 			.style("font-size", "12px")
 			.style("font-weight", "bold")
-			.text(d => d.total.toFixed(1));
+			.style("word-wrap", "break-word")
+			.style("line-height", "1.2")
+			.html(d => {
+				const value = d.total.toFixed(1);
+				return `${value}<br/>Tonnes<br/>used`;
+			});
 		
 		const xAxis = d3.axisBottom(xScale)
 			.tickValues(xScale.domain().filter((d, i) => i % 2 === 0));
@@ -261,7 +269,7 @@ constructor(parentElement, internalData, externalData) {
 		
 		const legend = vis.g.append("g")
 			.attr("class", "pie-legend viz-content")
-			.attr("transform", `translate(${vis.width - 100}, 0)`);
+			.attr("transform", `translate(${vis.width - 150}, -15)`);
 		
 		legend.append("circle")
 			.attr("cx", 0)
@@ -278,16 +286,16 @@ constructor(parentElement, internalData, externalData) {
 			.text("Jewelry");
 		
 		legend.append("circle")
-			.attr("cx", 0)
-			.attr("cy", 20)
+			.attr("cx", 70)
+			.attr("cy", 0)
 			.attr("r", 6)
 			.attr("fill", "#9370DB")
 			.attr("stroke", "white")
 			.attr("stroke-width", 1);
 		
 		legend.append("text")
-			.attr("x", 12)
-			.attr("y", 24)
+			.attr("x", 82)
+			.attr("y", 4)
 			.style("font-size", "11px")
 			.text("Bar & Coin");
 	}

@@ -1,3 +1,5 @@
+const NO_DATA_COLOR = "#e8e8e8";
+
 class WorldMap {
 
 constructor(parentElement, allYearData) {
@@ -90,14 +92,14 @@ constructor(parentElement, allYearData) {
  				.enter()
  				.append("path")
  				.attr("d", vis.path)
- 				.attr("fill", d => {
- 					const countryName = d.properties.name;
- 					const value = vis.countryData[countryName];
- 					if (value === undefined || value <= 0) {
- 						return "#cccccc";
- 					}
- 					return vis.colorScale(value);
- 				})
+				.attr("fill", d => {
+					const countryName = d.properties.name;
+					const value = vis.countryData[countryName];
+					if (value === undefined || value <= 0) {
+						return NO_DATA_COLOR;
+					}
+					return vis.colorScale(value);
+				})
  				.attr("stroke", "#333333")
  				.attr("stroke-width", 0.5)
  				.style("opacity", 0.9)
@@ -170,6 +172,8 @@ constructor(parentElement, allYearData) {
 		
 		const legendWidth = 450;
 		const legendHeight = 30;
+		const noDataBoxWidth = 40;
+		const gap = 10;
 
 		const defs = legendSvg.append("defs");
 		const linearGradient = defs.append("linearGradient")
@@ -213,6 +217,23 @@ constructor(parentElement, allYearData) {
 			.attr("transform", `translate(0, ${legendHeight})`)
 			.call(legendAxis)
 			.style("font-size", "10px");
+
+		const noDataBoxX = legendWidth + gap;
+		legendSvg.append("rect")
+			.attr("x", noDataBoxX)
+			.attr("y", 0)
+			.attr("width", noDataBoxWidth)
+			.attr("height", legendHeight)
+			.style("fill", NO_DATA_COLOR)
+			.style("stroke", "#333")
+			.style("stroke-width", 1);
+
+		legendSvg.append("text")
+			.attr("x", noDataBoxX + noDataBoxWidth / 2)
+			.attr("y", legendHeight + 15)
+			.attr("text-anchor", "middle")
+			.style("font-size", "10px")
+			.text("No Data");
 	}
 
 	updateYear(year) {
@@ -229,7 +250,7 @@ constructor(parentElement, allYearData) {
 					const countryName = d.properties.name;
 					const value = vis.countryData[countryName];
 					if (value === undefined || value <= 0) {
-						return "#cccccc";
+						return NO_DATA_COLOR;
 					}
 					return vis.colorScale(value);
 				});

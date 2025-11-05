@@ -1,6 +1,41 @@
 let worldMap, timeline, countryPanel;
 
 loadData();
+setupInfoPopup();
+
+function setupInfoPopup() {
+    const infoButton = document.getElementById("info-button");
+    const infoPopup = document.getElementById("info-popup");
+
+    infoButton.addEventListener("click", function(event) {
+        event.stopPropagation();
+        const x = event.pageX;
+        const y = event.pageY;
+        
+        infoPopup.style.display = "block";
+        infoPopup.style.left = x + "px";
+        infoPopup.style.top = y + "px";
+        
+        setTimeout(() => {
+            const rect = infoPopup.getBoundingClientRect();
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+            
+            if (rect.right > windowWidth) {
+                infoPopup.style.left = (x - rect.width) + "px";
+            }
+            if (rect.bottom > windowHeight) {
+                infoPopup.style.top = (y - rect.height) + "px";
+            }
+        }, 0);
+    });
+
+    document.addEventListener("click", function(event) {
+        if (!infoPopup.contains(event.target) && event.target !== infoButton) {
+            infoPopup.style.display = "none";
+        }
+    });
+}
 
 function loadData() {
     d3.json("data/consumer_internal_external.json").then(jsonData => {

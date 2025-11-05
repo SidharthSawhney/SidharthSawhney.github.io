@@ -77,6 +77,13 @@ class Timeline {
 		
 		if (vis.isPlaying) return;
 		
+		const currentValue = vis.slider.value();
+		
+		if (currentValue >= 2024) {
+			vis.slider.value(2010);
+			yearUpdate(2010);
+		}
+		
 		vis.isPlaying = true;
 		d3.select("#play-pause-button").classed("playing", true);
 		

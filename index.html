@@ -20,13 +20,21 @@
     <div id="header-section" style="min-height: 10vh; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 20px 40px; gap: 20px;">
         <div style="text-align: left; flex: 0 1 auto;">
             <h1 id="main-title">World Gold Consumer Demand in 2024</h1> 
-            <h2 style="font-style: italic; color: #666;">Click on a country to see more</h2>
+            <h2 style="font-style: italic; color: #666; display: flex; align-items: center; gap: 8px;">
+                Click on a country to see more
+                <button id="info-button" style="width: 20px; height: 20px; border: none; background: transparent; cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center;">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="8" cy="8" r="7" stroke="#666" stroke-width="1.5" fill="none"/>
+                        <text x="8" y="12" text-anchor="middle" fill="#666" font-size="12" font-weight="bold">i</text>
+                    </svg>
+                </button>
+            </h2>
         </div>
         
         <!-- Horizontal color legend -->
         <div id="legend-container" style="display: flex; align-items: flex-end; gap: 15px; flex: 0 1 auto; margin-bottom: -35px;">
-            <span id="legend-label" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 50px; white-space: nowrap;">Total Consumption of Gold (Tonnes)</span>
-            <svg id="legend" style="width: 450px; height: 80px;"></svg>
+            <span id="legend-label" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 50px; white-space: nowrap;">Total Consumption of Gold (Tonnes, log-scale)</span>
+            <svg id="legend" style="width: 500px; height: 80px;"></svg>
         </div>
     </div>
 
@@ -72,6 +80,17 @@
             </svg>
         </button>
         <div id="timeline" style="height: 100%; width: 100%;"></div>
+    </div>
+</div>
+
+<!-- Info Popup -->
+<div id="info-popup" style="position: absolute; background: white; border: 2px solid #333; border-radius: 8px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: none; z-index: 10000; max-width: 400px; font-size: 14px; line-height: 1.6;">
+    <div>
+        <h3 style="margin: 0 0 12px 0; font-size: 16px; font-weight: 600; color: #333;">About This Visualization</h3>
+        <p style="margin: 0 0 10px 0;"><strong>Gold consumption</strong> - The total amount of gold purchased/used within a country for a given year in tonnes</p>
+        <p style="margin: 0 0 10px 0;"><strong>Jewelry</strong> - Jewelry demand in tonnes</p>
+        <p style="margin: 0 0 10px 0;"><strong>Bar & Coin</strong> - Gold Investment demand in tonnes</p>
+        <p style="margin: 0;"><strong>Data source</strong> - <a href="https://www.gold.org/goldhub/data/gold-demand-by-country" target="_blank" style="color: #0066cc;">https://www.gold.org/goldhub/data/gold-demand-by-country</a></p>
     </div>
 </div>
 
