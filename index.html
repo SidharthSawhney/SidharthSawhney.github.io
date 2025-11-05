@@ -52,7 +52,25 @@
     </div>
 
     <!-- timeline slider -->
-    <div style="height: 10vh; width: 100%; display: flex; align-items: center; padding: 0 40px; margin-bottom: 20px;">
+    <div style="height: 10vh; width: 100%; display: flex; align-items: center; padding: 0 40px; margin-bottom: 20px; gap: 10px;">
+        <button id="rewind-button" class="timeline-control-button" style="width: 40px; height: 40px; border: 2px solid #333; background: white; cursor: pointer; border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 0; flex-shrink: 0; transform: translateY(-15px);">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 4L5 8L10 12V4Z" fill="#333"/>
+                <path d="M6 4L1 8L6 12V4Z" fill="#333"/>
+            </svg>
+        </button>
+        <button id="play-pause-button" class="timeline-control-button" style="width: 40px; height: 40px; border: 2px solid #333; background: white; cursor: pointer; border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 0; flex-shrink: 0; transform: translateY(-15px);">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="play-icon" d="M6 4L12 8L6 12V4Z" fill="#333"/>
+                <path id="pause-icon" d="M5 4H7V12H5V4ZM9 4H11V12H9V4Z" fill="#333"/>
+            </svg>
+        </button>
+        <button id="forward-button" class="timeline-control-button" style="width: 40px; height: 40px; border: 2px solid #333; background: white; cursor: pointer; border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 0; flex-shrink: 0; transform: translateY(-15px);">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 4L11 8L6 12V4Z" fill="#333"/>
+                <path d="M10 4L15 8L10 12V4Z" fill="#333"/>
+            </svg>
+        </button>
         <div id="timeline" style="height: 100%; width: 100%;"></div>
     </div>
 </div>

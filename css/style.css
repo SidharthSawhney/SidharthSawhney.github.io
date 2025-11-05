@@ -29,6 +29,35 @@ h2 {
     transform: scale(0.95);
 }
 
+.timeline-control-button {
+    transition: all 0.2s ease;
+}
+
+.timeline-control-button:hover {
+    background: #f0f0f0 !important;
+    transform: translateY(-15px) scale(1.1);
+}
+
+.timeline-control-button:active {
+    transform: translateY(-15px) scale(0.95);
+}
+
+#play-pause-button.playing #play-icon {
+    display: none;
+}
+
+#play-pause-button.playing #pause-icon {
+    display: block !important;
+}
+
+#play-pause-button:not(.playing) #play-icon {
+    display: block;
+}
+
+#play-pause-button:not(.playing) #pause-icon {
+    display: none;
+}
+
 @media (max-width: 1200px) {
     #header-section {
         flex-direction: column;
