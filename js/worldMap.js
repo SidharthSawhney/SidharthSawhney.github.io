@@ -30,12 +30,20 @@ constructor(parentElement, allYearData) {
             .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
         vis.initialTransform = `translate(${vis.margin.left},${vis.margin.top})`;
+        vis.selectedPath = null;
 
         d3.select("#close-panel").on("click", function() {
             d3.select("#country-panel").style("right", "-50%");
             vis.g.transition()
                 .duration(750)
                 .attr("transform", vis.initialTransform);
+            
+            if (vis.selectedPath) {
+                vis.selectedPath
+                    .attr("stroke", "#333333")
+                    .attr("stroke-width", 0.5)
+                    .attr("stroke-dasharray", "none");
+            }
         });
 
         document.addEventListener('keydown', (event) => {
@@ -44,6 +52,13 @@ constructor(parentElement, allYearData) {
                 vis.g.transition()
                     .duration(750)
                     .attr("transform", vis.initialTransform);
+                
+                if (vis.selectedPath) {
+                    vis.selectedPath
+                        .attr("stroke", "#333333")
+                        .attr("stroke-width", 0.5)
+                        .attr("stroke-dasharray", "none");
+                }
             }
         });
 
@@ -95,14 +110,14 @@ constructor(parentElement, allYearData) {
 				.on("mouseout", function () {
 					vis.tooltip.style("display", "none");
 				})
-				.on("click", function(_, d) {
+				.on("click", function(event, d) {
 					const countryName = d.properties.name;
 					
-					d3.select("#country-panel").style("right", "0");
-					d3.select("#country-name").text(countryName);
-					
-					if (window.countryPanel) {
-						window.countryPanel.updateCountry(countryName, vis.currentYear);
+					if (vis.selectedPath) {
+						vis.selectedPath
+							.attr("stroke", "#333333")
+							.attr("stroke-width", 0.5)
+							.attr("stroke-dasharray", "none");
 					}
 					
 					const bounds = vis.path.bounds(d);
@@ -112,6 +127,33 @@ constructor(parentElement, allYearData) {
 					const y = (bounds[0][1] + bounds[1][1]) / 2;
 					const scale = 0.9 / Math.max(dx / (vis.width / 2), dy / vis.height);
 					const translate = [vis.width / 4 - scale * x, vis.height / 2 - scale * y];
+					
+					vis.selectedPath = d3.select(this);
+					const scaledStrokeWidth = 2 / scale;
+					vis.selectedPath
+						.attr("stroke", "#000000")
+						.attr("stroke-width", scaledStrokeWidth)
+						.attr("stroke-dasharray", `${5/scale},${5/scale}`);
+					
+					const totalLength = vis.selectedPath.node().getTotalLength();
+					let offset = 0;
+					vis.selectedPath.attr("stroke-dashoffset", 0);
+					
+					function animate() {
+						offset = (offset + (0.2 / scale)) % (totalLength);
+						if (vis.selectedPath) {
+							vis.selectedPath.attr("stroke-dashoffset", offset);
+							requestAnimationFrame(animate);
+						}
+					}
+					animate();
+					
+					d3.select("#country-panel").style("right", "0");
+					d3.select("#country-name").text(countryName);
+					
+					if (window.countryPanel) {
+						window.countryPanel.updateCountry(countryName, vis.currentYear);
+					}
 
 					vis.g.transition()
 						.duration(750)
